@@ -1,0 +1,308 @@
+/* ============================================================
+   STACKLY — CINEMATIC INTRO
+   ============================================================ */
+/* The intro must never lock the page: it is a brief overlay, not a loader. */
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: #f4efe8;
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(77, 154, 168, 0.3) 0%, transparent 55%),
+    radial-gradient(110% 90% at 90% 100%, rgba(196, 87, 46, 0.26) 0%, transparent 58%),
+    #141312;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: clip-path;
+  /* Failsafe only: hide even if the script never runs. */
+  animation: introFailsafe 0.3s linear 2s forwards;
+}
+
+/* Once the script has built the intro, arm the fast compositor auto-exit.
+   Switching the animation restarts it, so the timing follows the content. */
+.intro-screen.is-live {
+  animation: introAutoExit 0.4s ease 1.25s forwards;
+}
+
+.intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: introGrain 7s steps(7) infinite;
+}
+
+.intro-orb {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.intro-orb.a {
+  width: min(58vw, 560px);
+  aspect-ratio: 1;
+  left: -10%;
+  top: -14%;
+  background: radial-gradient(circle at 35% 35%, #a9d6cf, transparent 65%);
+  animation: introFloat 9s ease-in-out infinite alternate;
+}
+
+.intro-orb.b {
+  width: min(52vw, 500px);
+  aspect-ratio: 1;
+  right: -8%;
+  bottom: -18%;
+  background: radial-gradient(circle at 60% 40%, #c4572e, transparent 65%);
+  animation: introFloat 11s -3s ease-in-out infinite alternate-reverse;
+}
+
+.intro-stage {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  transform: translateZ(0);
+}
+
+.intro-eyebrow {
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 232, 0.6);
+  opacity: 0;
+  animation: introFadeUp 0.5s 0.04s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro-logo {
+  margin-top: 22px;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+}
+
+.intro-logo img {
+  display: block;
+  width: clamp(140px, 18vw, 200px);
+  height: auto;
+  filter: brightness(0) invert(1);
+  transform: translateY(115%);
+  animation: introRise 0.6s 0.02s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro-rule {
+  display: block;
+  width: 0;
+  height: 1px;
+  margin: 26px 0 18px;
+  background: linear-gradient(90deg, transparent, rgba(232, 201, 160, 0.85), transparent);
+  animation: introRule 0.65s 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro-tagline {
+  margin: 0;
+  font-family: var(--serif, Georgia, serif);
+  font-style: italic;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.3;
+  color: rgba(244, 239, 232, 0.78);
+  opacity: 0;
+  animation: introFadeUp 0.5s 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro-marquee {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(74px, 12vh, 118px);
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  animation: introFadeUp 0.5s 0.3s ease forwards;
+}
+
+.intro-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: introMarquee 20s linear infinite;
+}
+
+.intro-marquee span {
+  display: block;
+  padding: 0 26px;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(244, 239, 232, 0.42);
+}
+
+.intro-marquee span::after {
+  content: "·";
+  margin-left: 52px;
+  color: rgba(232, 201, 160, 0.8);
+}
+
+.intro-progress {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(28px, 5vh, 44px);
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(360px, 72vw);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: rgba(244, 239, 232, 0.55);
+}
+
+.intro-count {
+  min-width: 2.5em;
+  font-variant-numeric: tabular-nums;
+}
+
+.intro-track {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(244, 239, 232, 0.16);
+}
+
+.intro-track i {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #a9d6cf, #e8c9a0);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: introBar 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro-skip {
+  position: absolute;
+  right: clamp(18px, 4vw, 34px);
+  top: clamp(18px, 4vw, 30px);
+  z-index: 5;
+  padding: 12px 18px;
+  border: 1px solid rgba(244, 239, 232, 0.22);
+  border-radius: 99px;
+  background: rgba(244, 239, 232, 0.04);
+  color: rgba(244, 239, 232, 0.72);
+  font-family: var(--sans, system-ui, sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  animation: introFadeUp 0.5s 0.1s ease forwards;
+}
+
+.intro-skip:hover {
+  background: #f4efe8;
+  border-color: #f4efe8;
+  color: #141312;
+  transform: translateY(-1px);
+}
+
+.intro-screen.is-leaving {
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+.intro-screen.is-leaving .intro-stage {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.98);
+  transition: opacity 0.3s ease, transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.intro-screen.is-leaving .intro-marquee,
+.intro-screen.is-leaving .intro-progress,
+.intro-screen.is-leaving .intro-skip {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+@keyframes introRise {
+  to { transform: translateY(0); }
+}
+
+@keyframes introAutoExit {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@keyframes introFailsafe {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@keyframes introBar {
+  to { transform: scaleX(1); }
+}
+
+@keyframes introFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes introRule {
+  to { width: min(240px, 52vw); }
+}
+
+@keyframes introFloat {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(4%, 6%, 0) scale(1.12); }
+}
+
+@keyframes introMarquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes introGrain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -5%); }
+  60% { transform: translate(-6%, -2%); }
+  80% { transform: translate(5%, 4%); }
+}
+
+@media (max-width: 600px) {
+  .intro-skip {
+    padding: 10px 14px;
+    font-size: 9px;
+  }
+  .intro-marquee span {
+    padding: 0 18px;
+    font-size: 10px;
+  }
+  .intro-marquee span::after {
+    margin-left: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen {
+    display: none !important;
+  }
+}

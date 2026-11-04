@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="js/restore-scroll.js"></script>
+  <title>Stackly - Luxury goods made slowly in Florence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300..900&family=Playfair+Display:ital,wght@1,400;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+  <!-- Mobile Sticky Header (Mobile View: Logo on Left, Hamburger on Right) -->
+  <header class="mobile-sticky-header" id="mobileStickyHeader" aria-label="Mobile Navigation Header">
+    <div class="mobile-header-inner">
+      <a href="index.html" class="mobile-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo-recoloured.webp" alt="Stackly Florence">
+      </a>
+      <button class="hamburger-btn mobile-hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
+
+  <header class="hero g">
+    <div class="wm" aria-hidden="true">Made Slow</div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <nav class="wrap nav">
+      <a href="index.html" class="logo"><img src="assets/stackly-logo-recoloured.webp" alt="Stackly"></a>
+      <ul class="nav-links">
+        <li class="on"><a class="on" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="auth">
+          <a class="pill" href="cart.html" aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.66 17h8.66a2 2 0 0 0 1.97-1.61L23 6H6"></path>
+            </svg>
+          </a>
+          <a class="pill" href="signin.html">Sign in</a>
+        </div>
+        <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="wrap hero-in">
+      <div class="hero-txt">
+        <div class="season">Piece of the season</div>
+        <h1>AURELIA</h1>
+        <div class="chips"><span>Calfskin</span><span>18k gold</span><span>Edition of 96</span></div>
+        <p class="lede">Hand-stitched calfskin, 18k gold hardware and a signature seam in orange thread. One run of 96,
+          each one numbered.</p>
+        <div class="btns"><button type="button" class="blob dk" onclick="location.href='404.html'">Next</button><button
+            type="button" class="blob wh" onclick="location.href='404.html'">Reserve</button></div>
+      </div>
+      <div class="hero-art">
+        <span class="ring"></span>
+        <img src="assets/image.webp" alt="Aurelia cream calfskin handbag with gold jewellery">
+        <div class="b96"><svg class="badge-dots" viewBox="0 0 146 126" aria-hidden="true" focusable="false">
+            <path d="M63 0H83A63 63 0 0 1 146 63V99A27 27 0 0 1 119 126H63A63 63 0 0 1 0 63A63 63 0 0 1 63 0Z" />
+          </svg><small>In the run</small><b>96</b></div>
+        <div class="b42"><svg class="badge-dots" viewBox="0 0 118 118" aria-hidden="true" focusable="false">
+            <circle cx="59" cy="59" r="57.5" />
+          </svg><small>Spoken for</small><b>42</b></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#services" aria-label="Scroll to services"><i></i><span>Scroll</span></a>
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#a9d6cf" opacity=".55"/></svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z" fill="#2f8f8a" opacity=".3"/></svg>
+    </div>
+  </header>
+
+  <section class="l sec" id="services">
+    <div class="wrap">
+      <h2>Five benches,<br>one signature</h2>
+      <h3 class="sub w460">Five houses of craft, each with its own workshop and waiting list. Every category is made by
+        a dedicated team, so a watch is never rushed by the people who stitch our bags.</h3>
+      <div class="bento">
+        <a class="cat leather" href="#"><i>128</i>
+          <div class="frame"><img src="assets/bento-leather.jpg" alt="Handcrafted leather bag"><svg class="frame-border"
+              aria-hidden="true" focusable="false">
+              <rect />
+            </svg>
+            <h5>Leather goods</h5>
+            <p>Totes, trunks and slim wallets in park-tanned calfskin that darkens to honey with use.</p>
+          </div>
+        </a>
+        <a class="cat watches" href="#"><i>64</i><img src="assets/bento-watch.jpg" alt="Watches">
+          <h5>Watches</h5>
+        </a>
+        <a class="cat jew" href="#"><i>92</i><img src="assets/bento-jewellery.jpg" alt="Jewellery">
+          <h5>Jewellery</h5>
+        </a>
+        <a class="cat frag" href="#"><i>47</i><img src="assets/bento-fragrance.jpg" alt="Fragrance">
+          <h5>Fragrance</h5>
+        </a>
+        <a class="cat silk" href="#"><i>35</i><img src="assets/bento-silk.jpg" alt="Silk">
+          <h5>Silk</h5>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="g sec" id="runs">
+    <div class="wrap">
+      <h2>Autumn run,<br>numbered</h2>
+      <h3 class="sub w460">Four limited editions, each numbered and signed. When a number sells out it does not return,
+        and the pattern is retired for good.</h3>
+      <div class="runs">
+        <div class="run teal"><b>24</b>
+          <h3>Teal Reverie trunk</h3>
+          <p>Lacquered canvas with brass corners.</p>
+        </div>
+        <div class="run white"><b>12</b>
+          <h3>Sand moon watch</h3>
+          <p>Automatic movement, sapphire back.</p>
+        </div>
+        <div class="run dark"><b>08</b>
+          <h3>Onyx cuff</h3>
+        </div>
+        <div class="run gold">
+          <div>
+            <h3>Gold hour ring</h3>
+            <p>Solid 18k gold, set by hand in a single afternoon.</p><a href="404.html" class="blob dk sm">Reserve yours</a>
+          </div><img src="assets/Gold hour ring.webp" alt="Gold hour ring">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l about" id="about">
+    <div class="wrap about-in">
+      <span class="arch-wrap"><img class="arch" src="assets/white-handbag.jpg" alt="White leather handbag"><svg
+          class="arch-border" aria-hidden="true" focusable="false">
+          <path />
+        </svg></span>
+      <div>
+        <h2>Made slowly,<br>on purpose</h2>
+        <p class="sub w400">Twelve pairs of hands touch every bag in our Florence atelier, from the first cut to the
+          last polish. Nothing is machine-finished, and nothing leaves until a master signs the inside seam in orange
+          thread.</p>
+        <div class="stats">
+          <div><b>38</b><span>Hours per bag</span><svg class="stat-border" aria-hidden="true" focusable="false">
+              <path />
+            </svg></div>
+          <div><b>12</b><span>Artisans each</span><svg class="stat-border" aria-hidden="true" focusable="false">
+              <path />
+            </svg></div>
+          <div><b>25</b><span>Year warranty</span><svg class="stat-border" aria-hidden="true" focusable="false">
+              <path />
+            </svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g sec2">
+    <div class="wrap">
+      <h2 class="l">Reordered most</h2>
+      <h3 class="sub w400">What our clients reorder, gift and pass down. Each one ships in a signed box with a care
+        card, a repair voucher and a certificate of origin.</h3>
+      <div class="prods">
+        <div class="prod">
+          <div class="prod-img-wrap">
+            <img src="assets/aurelia-jellyfish.jpg" alt="Aurelia tote">
+            <svg class="prod-img-border" aria-hidden="true" focusable="false">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
+              <path />
+            </svg>
+          </div>
+          <p>Aurelia tote</p>
+          <div><b>$2,850</b><a href="cart.html?add=aurelia-tote" class="add">Add</a></div>
+        </div>
+        <div class="prod">
+          <div class="prod-img-wrap">
+            <img src="assets/lune-watch.jpg" alt="Lune watch">
+            <svg class="prod-img-border" aria-hidden="true" focusable="false">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
+              <path />
+            </svg>
+          </div>
+          <p>Lune watch</p>
+          <div><b>$7,400</b><a href="cart.html?add=lune-watch" class="add">Add</a></div>
+        </div>
+        <div class="prod">
+          <div class="prod-img-wrap">
+            <img src="assets/soir-parfum.jpg" alt="Soir parfum">
+            <svg class="prod-img-border" aria-hidden="true" focusable="false">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
+              <path />
+            </svg>
+          </div>
+          <p>Soir parfum</p>
+          <div><b>$310</b><a href="cart.html?add=soir-parfum" class="add">Add</a></div>
+        </div>
+        <div class="prod">
+          <div class="prod-img-wrap">
+            <img src="assets/halo-ring.jpg" alt="Halo ring">
+            <svg class="prod-img-border" aria-hidden="true" focusable="false">
+              <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
+              <path />
+            </svg>
+          </div>
+          <p>Halo ring</p>
+          <div><b>$4,200</b><a href="cart.html?add=halo-ring" class="add">Add</a></div>
+        </div>
+      </div>
+      <div class="how">
+        <h2>From our bench to your door</h2>
+        <h3 class="sub c">Four steps, usually within three weeks, with photos of your piece at every stage.</h3>
+        <div class="how-steps">
+          <span class="how-line" aria-hidden="true"></span>
+          <ol>
+            <li><i>1</i><b>Choose</b><span>Pick a piece and your finish.</span></li>
+            <li><i class="d">2</i><b>Craft</b><span>Your artisan starts, and sends photos.</span></li>
+            <li><i>3</i><b>Sign</b><span>A master signs the inside seam.</span></li>
+            <li><i class="o">4</i><b>Deliver</b><span>Insured, hand-wrapped, tracked.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#a9d6cf" opacity=".55"/></svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z" fill="#2f8f8a" opacity=".3"/></svg>
+    </div>
+  </section>
+
+  <section class="l sec" id="promise">
+    <div class="wrap">
+      <h2>Promises we keep,<br>for life</h2>
+      <p class="sub w460">Every piece leaves Florence with three guarantees, written down and signed by the artisan who
+        made it.</p>
+      <div class="prom">
+        <div class="pm tl"><b>01</b>
+          <h3>Repaired for life</h3>
+          <p>Send it back to the bench any time. Stitching, polishing and re-gilding are always free.</p><svg
+            class="pm-border" aria-hidden="true" focusable="false">
+            <path />
+          </svg>
+        </div>
+        <div class="pm wt"><b>02</b>
+          <h3>Certificate of origin</h3>
+          <p>Each edition number, maker and date is recorded and kept in our Florence register.</p><svg
+            class="pm-border" aria-hidden="true" focusable="false">
+            <path />
+          </svg>
+        </div>
+        <div class="pm dk2"><b>03</b>
+          <h3>Your initials, free</h3>
+          <p>Hand-stamped in gold or blind, on every bag and wallet.</p><svg class="pm-border" aria-hidden="true"
+            focusable="false">
+            <path />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g sec3" id="journal">
+    <div class="wrap">
+      <h2>Heard at the counter</h2>
+      <p class="sub">From clients who have been with us a while</p>
+      <div class="quotes">
+        <blockquote class="q1"><span>“</span>
+          <p>Nine airports, one tote. The leather has gone from pale tan to honey, and I would not undo a single mark.
+          </p><cite>Maeve K., Mumbai</cite>
+        </blockquote>
+        <blockquote class="q2">
+          <p>The watch came with a note from the man who built it. Nobody has ever done that for me.</p><cite>Daniel R.,
+            London</cite><svg class="q2-border" aria-hidden="true" focusable="false">
+            <path />
+          </svg>
+        </blockquote>
+      </div>
+      <div class="last">
+        <a class="care" href="#"><img src="assets/calfskin.webp" alt="Tan calfskin bag">
+          <h3>How to care for calfskin</h3>
+          <p>Three habits that keep a bag supple for decades.</p>
+        </a>
+        <div class="news" id="contact">
+          <h2>Be first to the bench</h2>
+          <p>New editions are announced to subscribers 48 hours before the public.</p>
+          <form novalidate onsubmit="return validateSubscribe(event)"><input id="subEmail" type="email"
+              placeholder="Your email" aria-label="Your email" aria-describedby="subErr"><button
+              type="submit">Subscribe</button></form>
+          <p class="err" id="subErr" role="alert"></p>
+        </div>
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#a9d6cf" opacity=".55"/></svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z" fill="#2f8f8a" opacity=".3"/></svg>
+    </div>
+  </section>
+
+  <section class="l sec faq">
+    <div class="wrap faq-in">
+      <div>
+        <h2>Questions,<br>answered</h2>
+        <p class="sub w400">Everything clients ask before they reserve. Anything else, write to the atelier and a real
+          person replies within a day.</p>
+        <div class="visit">
+          <h3>Visit the atelier</h3>
+          <p>MMR Complex, Periyakollappatty, Salem<br>Tuesday to Saturday, by appointment</p><a href="404.html" class="visit-btn">Book a visit</a>
+        </div>
+      </div>
+      <div class="qa">
+        <details>
+          <summary>How long does a piece take?</summary>
+          <p>Usually three weeks from choosing to delivery, with photos of your piece at every stage.</p>
+        </details>
+        <details>
+          <summary>Can I change the finish after reserving?</summary>
+          <p>Yes, until the artisan cuts the first panel. After that the pattern is fixed and signed.</p>
+        </details>
+        <details>
+          <summary>What if an edition sells out?</summary>
+          <p>Numbered editions do not return. Join the list and you will hear first about the next run.</p>
+        </details>
+        <details>
+          <summary>Do you ship outside Italy?</summary>
+          <p>We ship worldwide, insured and hand-wrapped, with tracking from the atelier door to yours.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-top">
+        <div class="sf-brand">
+          <a href="index.html" class="sf-logo" aria-label="Stackly home">
+            <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="156" height="42" loading="lazy">
+          </a>
+          <p>Stackly makes leather goods, watches and jewellery by hand in Florence, and looks after them for life.</p>
+          <a class="sf-mail" href="mailto:hello@thestackly.com">hello@thestackly.com <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <nav class="sf-col" aria-label="Shop">
+          <h4 class="sf-title" data-heading-glow>Shop</h4>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Journal</a>
+          <a href="cart.html">Cart</a>
+          <a href="signup.html">Create account</a>
+        </nav>
+        <nav class="sf-col" aria-label="Company">
+          <h4 class="sf-title" data-heading-glow>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="signin.html">Sign in</a>
+        </nav>
+        <div class="sf-col sf-visit">
+          <h4 class="sf-title" data-heading-glow>Visit</h4>
+          <address>
+            <span>MMR Complex, Periyakollappatty</span>
+            <span>Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </address>
+          <a class="sf-phone" href="tel:7010792745"><i class="fa-solid fa-phone" aria-hidden="true"></i>7010792745</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="sf-bottom">
+        <small>&copy; 2026 Stackly. Crafted in Florence.</small>
+        <span class="sf-note">Handmade in Florence &middot; Shipped worldwide</span>
+        <a class="sf-back" href="#" aria-label="Back to top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    function validateSubscribe(e) {
+      e.preventDefault();
+      var form = e.target,
+        input = form.querySelector('input'),
+        err = document.getElementById('subErr'),
+        value = input.value.trim().toLowerCase();
+      if (!/^[^\s@]+@gmail\.com$/.test(value)) {
+        err.textContent = 'Only Gmail addresses are allowed.';
+        err.classList.add('on');
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        if (window.gsap) { gsap.fromTo(input, { x: -9 }, { x: 0, duration: .6, ease: 'elastic.out(1,.35)' }); gsap.fromTo(err, { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: .4, ease: 'power3.out' }); }
+        return false;
+      }
+      err.classList.remove('on');
+      err.textContent = '';
+      input.removeAttribute('aria-invalid');
+      window.location.href = '404.html';
+      return false;
+    }
+    document.getElementById('subEmail').addEventListener('input', function () {
+      var err = document.getElementById('subErr');
+      if (this.value.trim() === '') { err.classList.remove('on'); this.removeAttribute('aria-invalid'); }
+    });
+  </script>
+  <script src="js/intro.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/sticky-nav.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="animations.js"></script>
+  <script src="js/email-validation.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

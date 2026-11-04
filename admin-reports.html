@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reports & Analytics | Stackly Florence</title>
+  <meta name="description" content="Review Stackly revenue, sell-through and production performance for the monthly atelier board pack.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+
+<body class="dash-menu-page">
+
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+
+  <header class="dash-mobile-header">
+    <a class="dash-mobile-logo" href="index.html" aria-label="Stackly home">
+      <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+    </a>
+    <button class="dash-menu-toggle" type="button" aria-label="Open dashboard menu" aria-expanded="false" aria-controls="dashSidebar">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+  <div class="dash-nav-backdrop" id="dashNavBackdrop" aria-hidden="true"></div>
+
+  <main class="wrap dash-main" id="top">
+    <div class="dash-shell">
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="dash-sidebar-top">
+          <span class="dash-sidebar-label">Menu</span>
+          <button class="dash-sidebar-close" type="button" aria-label="Close dashboard menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="dash-sidebar-scroll">
+          <div class="sidebar-head">
+            <a class="sidebar-logo" href="admin-dashboard.html" aria-label="Stackly admin dashboard">
+              <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+            </a>
+          </div>
+        <nav class="sidebar-nav" aria-label="Admin dashboard navigation">
+          <a href="admin-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></a>
+          <a href="admin-orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a>
+          <a href="admin-inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span>Inventory</span></a>
+          <a href="admin-artisans.html"><i class="fa-solid fa-people-group"></i><span>Artisans</span></a>
+          <a href="admin-clients.html"><i class="fa-solid fa-user-group"></i><span>Clients</span></a>
+          <a href="admin-reports.html" class="is-active" aria-current="page"><i class="fa-solid fa-chart-line"></i><span>Reports</span></a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <nav class="sidebar-nav sidebar-secondary" aria-label="Other destinations">
+            <a href="user-dashboard.html"><i class="fa-solid fa-gem"></i><span>User view</span></a>
+          <a href="index.html"><i class="fa-solid fa-house"></i><span>Back to site</span></a>
+        </nav>
+        <div class="sidebar-card">
+          <i class="fa-solid fa-shield-halved"></i>
+            <div><strong>Admin access</strong><span>Full admin controls</span></div>
+        </div>
+
+        <a class="sidebar-logout" href="signin.html" aria-label="Log out of your account">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span>
+        </a>
+        </div>
+      </aside>
+      <div class="dash-content">
+        <div class="dash-banner">
+          <div class="page-banner dark">
+            <div class="banner-info">
+              <div class="banner-avatar"><i class="fa-solid fa-chart-line"></i></div>
+              <div>
+                <span class="eyebrow">Atelier operations · Performance</span>
+                <h1>Reports &amp; analytics</h1>
+                <p>Revenue, sell-through and production performance in one place. Built for the monthly board pack and the Monday bench meeting.</p>
+              </div>
+            </div>
+            <div class="banner-actions"><a class="btn ghost-light" href="#"><i class="fa-solid fa-download"></i> Download data</a>
+                <a class="btn light" href="#"><i class="fa-solid fa-file-lines"></i> Board pack</a></div>
+          </div>
+        </div>
+
+        <div class="dash-metrics">
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-euro-sign"></i></div>
+            <div class="metric-data">
+              <b>€2.4M</b>
+              <span>Revenue year to date</span>
+              <small>+18% vs 2025</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="metric-data">
+              <b>€1,860</b>
+              <span>Average order value</span>
+              <small>+6% year on year</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <div class="metric-data">
+              <b>4.8%</b>
+              <span>Storefront conversion</span>
+              <small>+0.7 points</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div class="metric-data">
+              <b>92%</b>
+              <span>Autumn sell-through</span>
+              <small>Limited runs to date</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Revenue by category</h2>
+            <p>Year to date, net of VAT and returns.</p>
+          </div>
+          <div class="head-actions"><span class="tag">Jan – Oct 2026</span></div>
+        </div>
+          <div class="dash-grid">
+            <div class="panel">
+              <div class="panel-head"><div><h3>Category mix</h3><p>Share of net revenue across the atelier.</p></div></div>
+              <div class="bar-chart">
+                <div class="bar-row">
+                  <span>Leather goods</span>
+                  <div class="bar-track"><i style="width:46%"></i></div>
+                  <b>46%</b>
+                </div>
+                <div class="bar-row">
+                  <span>Horology</span>
+                  <div class="bar-track"><i style="width:28%"></i></div>
+                  <b>28%</b>
+                </div>
+                <div class="bar-row">
+                  <span>Jewellery</span>
+                  <div class="bar-track"><i style="width:18%"></i></div>
+                  <b>18%</b>
+                </div>
+                <div class="bar-row">
+                  <span>Atelier services</span>
+                  <div class="bar-track"><i style="width:8%"></i></div>
+                  <b>8%</b>
+                </div>
+              </div>
+              <div class="note" style="margin-top:22px">
+                <i class="fa-solid fa-chart-simple"></i>
+                <p><strong>Leather goods lead growth.</strong> Aurelia and Teal Reverie account for 31% of all net revenue this year.</p>
+              </div>
+            </div>
+            <div class="panel soft">
+              <div class="panel-head"><div><h3>Reporting period</h3><p>Source, scope and refresh time for this view.</p></div></div>
+              <div class="detail-grid">
+                <div class="detail-item"><span>Period</span><b>01 Jan – 31 Oct 2026</b></div>
+                <div class="detail-item"><span>Currency</span><b>EUR · net of VAT</b></div>
+                <div class="detail-item"><span>Prepared by</span><b>Finance &amp; Atelier Ops</b></div>
+                <div class="detail-item"><span>Last refresh</span><b>Today, 08:30 CET</b></div>
+                <div class="detail-item full"><span>Included</span><b>Web orders, atelier reservations, bespoke commissions and lifetime care services.</b></div>
+                <div class="detail-item full"><span>Excluded</span><b>Wholesale partner sales, staff purchases and cancelled deposits.</b></div>
+              </div>
+              <a class="btn dark" href="#" style="margin-top:22px"><i class="fa-solid fa-download"></i> Download full report</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Production performance</h2>
+            <p>Cycle time and sell-through for every live limited run.</p>
+          </div>
+          <div class="head-actions"><a class="btn light" href="admin-inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Material view</a></div>
+        </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Run</th>
+                  <th>Units</th>
+                  <th>Allocated</th>
+                  <th>Sell-through</th>
+                  <th>Average cycle</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Aurelia Handbag</strong><span class="table-sub">Calfskin · Bench 1</span></td>
+                  <td>96</td>
+                  <td>42</td>
+                  <td>44%</td>
+                  <td>38 hrs</td>
+                  <td><span class="status ok">In production</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Teal Reverie Trunk</strong><span class="table-sub">Lacquered canvas · Bench 1</span></td>
+                  <td>24</td>
+                  <td>18</td>
+                  <td>75%</td>
+                  <td>52 hrs</td>
+                  <td><span class="status ok">In production</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sand Moon Watch</strong><span class="table-sub">Horology · Bench 2</span></td>
+                  <td>12</td>
+                  <td>11</td>
+                  <td>92%</td>
+                  <td>28 hrs</td>
+                  <td><span class="status warn">Nearly exhausted</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Onyx Cuff</strong><span class="table-sub">18k gold · Bench 3</span></td>
+                  <td>08</td>
+                  <td>08</td>
+                  <td>100%</td>
+                  <td>22 hrs</td>
+                  <td><span class="status neutral">Retired</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Gold Hour Ring</strong><span class="table-sub">18k gold · Bench 3</span></td>
+                  <td>06</td>
+                  <td>04</td>
+                  <td>67%</td>
+                  <td>16 hrs</td>
+                  <td><span class="status ok">In production</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Scheduled exports</h2>
+            <p>Recurring reports delivered to the board and compliance ledger.</p>
+          </div>
+          <div class="head-actions"><a class="btn light" href="#"><i class="fa-solid fa-gear"></i> Manage schedule</a></div>
+        </div>
+          <div class="dash-grid three">
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-file-pdf"></i></div>
+              <h4>Monthly board pack</h4>
+              <p>Revenue, margin, sell-through and bench utilisation in a single PDF for the guild board.</p>
+              <div class="metric-line"><span>Next run</span><b>01 Dec 2026</b></div>
+              <div class="metric-line"><span>Format</span><b>PDF · 24 pages</b></div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon gold"><i class="fa-solid fa-file-excel"></i></div>
+              <h4>Inventory valuation</h4>
+              <p>Landed cost, reorder points and slow-moving materials across all three suppliers.</p>
+              <div class="metric-line"><span>Next run</span><b>15 Nov 2026</b></div>
+              <div class="metric-line"><span>Format</span><b>XLSX · 8 tabs</b></div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon dark"><i class="fa-solid fa-file-csv"></i></div>
+              <h4>VAT &amp; compliance</h4>
+              <p>EU sales by country, export declarations and the insured dispatch register.</p>
+              <div class="metric-line"><span>Next run</span><b>30 Nov 2026</b></div>
+              <div class="metric-line"><span>Format</span><b>CSV · EU sales</b></div>
+            </div>
+          </div>
+          <div class="note" style="margin-top:18px">
+            <i class="fa-solid fa-circle-info"></i>
+            <p><strong>Data freshness:</strong> the dashboard refreshes every 30 minutes. Board packs lock at 08:00 CET on the first working day of the month.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+  (function () {
+    function alignActive() {
+      var nav = document.querySelector('.dash-sidebar .sidebar-nav');
+      var active = nav && nav.querySelector('a.is-active');
+      if (!nav || !active || window.innerWidth > 1080) return;
+      var navBox = nav.getBoundingClientRect();
+      var activeBox = active.getBoundingClientRect();
+      nav.scrollLeft += (activeBox.left + activeBox.width / 2) - (navBox.left + navBox.width / 2);
+    }
+    alignActive();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(alignActive); }
+    window.addEventListener('load', alignActive);
+    window.addEventListener('resize', alignActive);
+  })();
+</script>
+<script src="js/dash-mobile-nav.js"></script>
+<script src="js/intro.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

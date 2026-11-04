@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My Collection | Stackly Florence</title>
+  <meta name="description" content="View every registered Stackly piece, its numbered edition, provenance records and the care it is due.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+
+<body class="dash-menu-page">
+
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+
+  <header class="dash-mobile-header">
+    <a class="dash-mobile-logo" href="index.html" aria-label="Stackly home">
+      <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+    </a>
+    <button class="dash-menu-toggle" type="button" aria-label="Open dashboard menu" aria-expanded="false" aria-controls="dashSidebar">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+  <div class="dash-nav-backdrop" id="dashNavBackdrop" aria-hidden="true"></div>
+
+  <main class="wrap dash-main" id="top">
+    <div class="dash-shell">
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="dash-sidebar-top">
+          <span class="dash-sidebar-label">Menu</span>
+          <button class="dash-sidebar-close" type="button" aria-label="Close dashboard menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="dash-sidebar-scroll">
+          <div class="sidebar-head">
+            <a class="sidebar-logo" href="user-dashboard.html" aria-label="Stackly dashboard">
+              <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+            </a>
+          </div>
+          <nav class="sidebar-nav" aria-label="Dashboard navigation">
+          <a href="user-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></a>
+          <a href="user-collection.html" class="is-active" aria-current="page"><i class="fa-solid fa-gem"></i><span>Collection</span></a>
+          <a href="user-orders.html"><i class="fa-solid fa-bag-shopping"></i><span>Orders</span></a>
+          <a href="user-commissions.html"><i class="fa-solid fa-feather-pointed"></i><span>Commissions</span></a>
+          <a href="user-appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+          <a href="user-profile.html"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <nav class="sidebar-nav sidebar-secondary" aria-label="Other destinations">
+          <a href="admin-dashboard.html"><i class="fa-solid fa-shield-halved"></i><span>Admin view</span></a>
+          <a href="index.html"><i class="fa-solid fa-house"></i><span>Back to site</span></a>
+        </nav>
+        <div class="sidebar-card">
+          <i class="fa-solid fa-gem"></i>
+            <div><strong>Gold Member</strong><span>Member #842</span></div>
+        </div>
+
+        <a class="sidebar-logout" href="signin.html" aria-label="Log out of your account">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span>
+        </a>
+        </div>
+      </aside>
+      <div class="dash-content">
+        <div class="dash-banner">
+          <div class="page-banner">
+            <div class="banner-info">
+              <div class="banner-avatar"><i class="fa-solid fa-gem"></i></div>
+              <div>
+                <span class="eyebrow">Collector dashboard · Collection</span>
+                <h1>My collection</h1>
+                <p>Every registered piece, its number, its maker and the care it is due. Your provenance records live here for life.</p>
+              </div>
+            </div>
+            <div class="banner-actions"><a class="btn light" href="user-orders.html"><i class="fa-solid fa-bag-shopping"></i> Orders</a>
+                <a class="btn dark" href="services.html"><i class="fa-solid fa-hand-sparkles"></i> Request care</a></div>
+          </div>
+        </div>
+
+        <div class="dash-metrics">
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-gem"></i></div>
+            <div class="metric-data">
+              <b>03</b>
+              <span>Registered pieces</span>
+              <small>All numbered &amp; signed</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="metric-data">
+              <b>€10,900</b>
+              <span>Insured value</span>
+              <small>Full replacement cover</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-hand-sparkles"></i></div>
+            <div class="metric-data">
+              <b>01</b>
+              <span>Care due</span>
+              <small>Complimentary polish</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-certificate"></i></div>
+            <div class="metric-data">
+              <b>25 yrs</b>
+              <span>Warranty active</span>
+              <small>Lifetime atelier care</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Registered numbered pieces</h2>
+            <p>Each piece is individually numbered and recorded in the atelier ledger.</p>
+          </div>
+          <div class="head-actions"><a class="btn light" href="#"><i class="fa-solid fa-plus"></i> Register a piece</a></div>
+        </div>
+          <div class="dash-grid">
+            <div class="edition-card">
+              <img src="assets/white-handbag.jpg" alt="Aurelia Calfskin Handbag" class="edition-img">
+              <div class="edition-info">
+                <div class="edition-tag"><i class="fa-solid fa-tag"></i><span>Run #42 of 96 · Numbered edition</span></div>
+                <h3>Aurelia Handbag in Cream</h3>
+                <p>Hand-stitched calfskin, 18k gold hardware and the signature orange seam. Inspected by Giulia R.</p>
+                <div class="edition-actions">
+                  <a class="btn light" href="services.html"><i class="fa-solid fa-sparkles"></i> Complimentary polish</a>
+                  <a class="btn light" href="#"><i class="fa-solid fa-file-shield"></i> Provenance ledger</a>
+                </div>
+              </div>
+            </div>
+            <div class="edition-card">
+              <img src="assets/lune-watch.jpg" alt="Sand Moon Watch" class="edition-img">
+              <div class="edition-info">
+                <div class="edition-tag"><i class="fa-solid fa-tag"></i><span>Run #12 of 24 · Numbered edition</span></div>
+                <h3>Sand Moon Watch</h3>
+                <p>Automatic mechanical movement, solid 18k gold case and sapphire case back. Inspected by Marco V.</p>
+                <div class="edition-actions">
+                  <a class="btn light" href="services.html"><i class="fa-solid fa-gear"></i> Movement calibration</a>
+                  <a class="btn light" href="#"><i class="fa-solid fa-file-shield"></i> Warranty certificate</a>
+                </div>
+              </div>
+            </div>
+            <div class="edition-card dash-span-2">
+              <img src="assets/Gold hour ring.webp" alt="Gold Hour Ring" class="edition-img">
+              <div class="edition-info">
+                <div class="edition-tag"><i class="fa-solid fa-tag"></i><span>Run #04 of 06 · Numbered edition</span></div>
+                <h3>Gold Hour Ring</h3>
+                <p>Solid 18k gold, set by hand in a single afternoon. The pattern has been retired and will not return.</p>
+                <div class="edition-actions">
+                  <a class="btn light" href="services.html"><i class="fa-solid fa-hand-sparkles"></i> Prong inspection</a>
+                  <a class="btn light" href="#"><i class="fa-solid fa-file-shield"></i> Certificate of origin</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Care &amp; service schedule</h2>
+            <p>Complimentary services included with your lifetime warranty.</p>
+          </div>
+          <div class="head-actions"><a class="btn light" href="services.html"><i class="fa-solid fa-calendar-plus"></i> Book a service</a></div>
+        </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Piece</th>
+                  <th>Service</th>
+                  <th>Due</th>
+                  <th>Artisan</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Aurelia Handbag</strong><span class="table-sub">Run #42 of 96</span></td>
+                  <td>Complimentary polish</td>
+                  <td>18 Nov 2026</td>
+                  <td>Giulia R.</td>
+                  <td><span class="status ok">Scheduled</span></td>
+                  <td><a class="btn light sm" href="#">Reschedule</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Sand Moon Watch</strong><span class="table-sub">Run #12 of 24</span></td>
+                  <td>Movement calibration</td>
+                  <td>04 Jan 2027</td>
+                  <td>Marco V.</td>
+                  <td><span class="status warn">Due soon</span></td>
+                  <td><a class="btn light sm" href="#">Book</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Gold Hour Ring</strong><span class="table-sub">Run #04 of 06</span></td>
+                  <td>Prong inspection</td>
+                  <td>22 Mar 2027</td>
+                  <td>Anika T.</td>
+                  <td><span class="status neutral">Planned</span></td>
+                  <td><a class="btn light sm" href="#">View</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Aurelia Handbag</strong><span class="table-sub">Run #42 of 96</span></td>
+                  <td>Leather conditioning</td>
+                  <td>12 Aug 2027</td>
+                  <td>Luca B.</td>
+                  <td><span class="status neutral">Planned</span></td>
+                  <td><a class="btn light sm" href="#">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Provenance vault</h2>
+            <p>Certificates, edition cards and the signed care ledger for your pieces.</p>
+          </div>
+        </div>
+          <div class="dash-grid">
+            <div class="panel">
+              <div class="panel-head">
+                <div><h3>Your documents</h3><p>Secure copies stored by the atelier.</p></div>
+                <span class="tag"><i class="fa-solid fa-lock"></i> Private</span>
+              </div>
+              <div class="doc-list">
+                <div class="doc-item">
+                  <div class="doc-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                  <div><h4>Certificate of origin</h4><p>Aurelia Handbag · PDF · 2 pages</p></div>
+                  <a class="btn light sm" href="#"><i class="fa-solid fa-download"></i></a>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-icon"><i class="fa-solid fa-file-lines"></i></div>
+                  <div><h4>Numbered edition card</h4><p>Sand Moon Watch · PDF · 1 page</p></div>
+                  <a class="btn light sm" href="#"><i class="fa-solid fa-download"></i></a>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-icon"><i class="fa-solid fa-scroll"></i></div>
+                  <div><h4>Care ledger</h4><p>All registered pieces · PDF · 6 pages</p></div>
+                  <a class="btn light sm" href="#"><i class="fa-solid fa-download"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="panel soft">
+              <div class="panel-head"><div><h3>Authenticity record</h3><p>Verified against the Florence atelier ledger.</p></div></div>
+              <div class="detail-grid">
+                <div class="detail-item"><span>Registered owner</span><b data-profile-owner>Marco Bellini</b></div>
+                <div class="detail-item"><span>Collector number</span><b>#842</b></div>
+                <div class="detail-item"><span>Last verification</span><b>12 Oct 2026</b></div>
+                <div class="detail-item"><span>Atelier seal</span><b>MMR Complex, Periyakollappatty, Salem</b></div>
+                <div class="detail-item full"><span>Cover</span><b>Lifetime care, complimentary polish and insured servicing for every registered piece.</b></div>
+              </div>
+              <div class="note" style="margin-top:20px">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p><strong>Keep your certificate safe.</strong> The atelier can reissue a digital copy, but resale authentication requires the original wax-sealed card.</p>
+              </div>
+              <a class="btn dark" href="contact.html" style="margin-top:20px"><i class="fa-solid fa-calendar-check"></i> Book authentication</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+  (function () {
+    function alignActive() {
+      var nav = document.querySelector('.dash-sidebar .sidebar-nav');
+      var active = nav && nav.querySelector('a.is-active');
+      if (!nav || !active || window.innerWidth > 1080) return;
+      var navBox = nav.getBoundingClientRect();
+      var activeBox = active.getBoundingClientRect();
+      nav.scrollLeft += (activeBox.left + activeBox.width / 2) - (navBox.left + navBox.width / 2);
+    }
+    alignActive();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(alignActive); }
+    window.addEventListener('load', alignActive);
+    window.addEventListener('resize', alignActive);
+  })();
+</script>
+<script src="js/dash-mobile-nav.js"></script>
+<script src="js/intro.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

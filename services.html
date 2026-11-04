@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="js/restore-scroll.js"></script>
+  <title>Services | Stackly Florence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+  <!-- Mobile Sticky Header (Mobile View: Logo on Left, Hamburger on Right) -->
+  <header class="mobile-sticky-header" id="mobileStickyHeader" aria-label="Mobile Navigation Header">
+    <div class="mobile-header-inner">
+      <a href="index.html" class="mobile-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo-recoloured.webp" alt="Stackly Florence">
+      </a>
+      <button class="hamburger-btn mobile-hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <header class="hero grad" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <nav class="nav wrap">
+      <a class="logo" href="index.html">
+        <img src="assets/stackly-logo-recoloured (1).webp" alt="Stackly Florence">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="on"><a class="on" href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="auth">
+          <a class="btn light icon-btn" href="cart.html" aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.66 17h8.66a2 2 0 0 0 1.97-1.61L23 6H6"></path>
+            </svg>
+          </a>
+          <a class="btn light" href="signin.html">Sign in</a>
+        </div>
+        <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="wrap hero-in">
+      <span class="ghost" aria-hidden="true">Concierge</span>
+      <div class="hero-copy">
+        <h1 data-split="chars">Services</h1>
+        <p data-split="words">Six ways we look after your pieces, from the first fitting to the fiftieth year of wear.</p>
+        <div class="row">
+          <a class="btn btn-3d dark lg" href="404.html" data-a>Book a consultation</a>
+          <a class="btn btn-3d light lg" href="404.html" data-a>See plans</a>
+        </div>
+      </div>
+      <figure class="frame hero-img">
+        <img src="assets/service hearor.webp" alt="Leather bags, watch and jewellery on plinth">
+      </figure>
+    </div>
+
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#a9d6cf" opacity=".55"/>
+      </svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z" fill="#2f8f8a" opacity=".3"/>
+      </svg>
+    </div>
+  </header>
+
+  <section class="offer">
+    <div class="wrap">
+      <h2 data-split="chars">Everything we offer</h2>
+      <p class="sub" data-split="words">Each service is run by the same artisans who make the goods, so advice always comes from someone who has held the leather.</p>
+      <div class="cards">
+        <article class="card c1" data-a>
+          <i><i class="fa-solid fa-gem"></i></i>
+          <h3>Private shopping</h3>
+          <p>Book a one-to-one session in store or by video with a personal stylist.</p>
+          <a class="btn btn-3d dark sm" href="404.html">Enquire</a>
+        </article>
+        <article class="card c2" data-a>
+          <i><i class="fa-solid fa-scissors"></i></i>
+          <h3>Bespoke commissions</h3>
+          <p>Choose leather, hardware and monogram. Built to your measurements.</p>
+          <a class="btn btn-3d light sm" href="404.html">Enquire</a>
+        </article>
+        <article class="card c3" data-a>
+          <i><i class="fa-solid fa-screwdriver-wrench"></i></i>
+          <h3>Repair &amp; restoration</h3>
+          <p>Re-stitching, polishing and movement servicing, for pieces of any age.</p>
+          <a class="btn btn-3d dark sm" href="404.html">Enquire</a>
+        </article>
+        <article class="card c4" data-a>
+          <i><i class="fa-solid fa-gift"></i></i>
+          <h3>Gift concierge</h3>
+          <p>Wrapping, handwritten notes and insured delivery on your date.</p>
+          <a class="btn btn-3d dark sm" href="404.html">Enquire</a>
+        </article>
+        <article class="card c5" data-a>
+          <i><i class="fa-solid fa-certificate"></i></i>
+          <h3>Authentication</h3>
+          <p>Certificates and provenance checks for pre-owned pieces.</p>
+          <a class="btn btn-3d dark sm" href="404.html">Enquire</a>
+        </article>
+        <article class="card c6" data-a>
+          <i><i class="fa-solid fa-repeat"></i></i>
+          <h3>Trade-in program</h3>
+          <p>Return a past piece and receive credit toward your next one.</p>
+          <a class="btn btn-3d dark sm" href="404.html">Enquire</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="private grad">
+    <div class="wrap split">
+      <div class="copy">
+        <h2 data-split="chars">Private<br>shopping</h2>
+        <p data-split="words">A stylist learns how you dress, travel and carry things, then builds a short list instead of a long catalogue. Sessions run 45 minutes, in our Florence atelier or over video.</p>
+        <p data-split="words">Pieces are held for you for 14 days with no deposit, so you can live with a choice before you commit.</p>
+        <ul class="dots">
+          <li data-a>Free for every registered member account</li>
+          <li data-a>Tailored short lists provided within 24 hours</li>
+          <li data-a>Home trials for bags and watches in select European cities</li>
+        </ul>
+        <a class="btn btn-3d dark lg" href="404.html" data-a>Book a session</a>
+      </div>
+      <figure class="frame sq"><img src="assets/private shopping.webp" alt="Stylist working with client at atelier"></figure>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#a9d6cf" opacity=".55"/>
+      </svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z" fill="#2f8f8a" opacity=".3"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2 class="center" data-split="chars">How a bespoke piece happens</h2>
+      <p class="sub center" data-split="words">Four stages from first sketch to final sign-off.</p>
+      <ol class="steps">
+        <li data-a><b>1</b><h4>Consultation</h4><p>We discuss leather, hardware and how you will use the piece.</p></li>
+        <li data-a><b class="d">2</b><h4>Pattern &amp; cut</h4><p>We build a bespoke paper pattern, cut the leather and send photos.</p></li>
+        <li data-a><b>3</b><h4>Making</h4><p>Stitching by hand in Florence, typically three to four weeks.</p></li>
+        <li data-a><b class="t">4</b><h4>Delivery</h4><p>Insured, tracked and signed by the artisan on the inside seam.</p></li>
+      </ol>
+      <div class="repair split">
+        <figure class="frame sq"><img src="assets/repair.jpg" alt="Artisan restoring leather bag"></figure>
+        <div class="copy">
+          <h2 data-split="chars">Repair &amp;<br>restoration</h2>
+          <p data-split="words">Every bag, watch and piece of jewellery we have ever sold is repairable for life. We keep patterns and spare hardware for every retired numbered run.</p>
+          <ul class="dots">
+            <li data-a>Free inspection and quote within 72 hours</li>
+            <li data-a>Original parts or hand-crafted replacements</li>
+            <li data-a>Movement servicing by our Florence watchmaker</li>
+          </ul>
+          <a class="btn btn-3d dark lg" href="404.html" data-a>Request a repair</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans grad" id="plans">
+    <div class="wrap">
+      <h2 class="center" data-split="chars">Atelier care plans</h2>
+      <p class="sub center" data-split="words">Complimentary with every piece, or upgraded for collectors with three or more.</p>
+      <div class="pl">
+        <article class="plan" data-a>
+          <small>Lifetime basic</small>
+          <h3>Standard</h3>
+          <ul class="dots">
+            <li>Annual conditioning and polish</li>
+            <li>Free stitch repairs forever</li>
+            <li>Insured return shipping</li>
+          </ul>
+          <a class="btn btn-3d dark sm" href="404.html">Included with pieces</a>
+        </article>
+        <article class="plan hot" data-a>
+          <small>Most popular</small>
+          <h3>Patron</h3>
+          <ul class="dots">
+            <li>Everything in Standard</li>
+            <li>Priority workshop queue</li>
+            <li>Free movement overhaul every 5 years</li>
+          </ul>
+          <a class="btn btn-3d light sm" href="404.html">Join Patron Tier</a>
+        </article>
+        <article class="plan" data-a>
+          <small>For five or more pieces</small>
+          <h3>Archive</h3>
+          <ul class="dots">
+            <li>Everything in Patron</li>
+            <li>Dedicated atelier artisan</li>
+            <li>Home collection and return in Europe</li>
+          </ul>
+          <a class="btn btn-3d dark sm" href="404.html">Enquire for Archive</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="recent">
+    <div class="wrap">
+      <h2 data-split="chars">Recent bespoke commissions</h2>
+      <p class="sub" data-split="words">Pieces finished for clients in the last quarter.</p>
+      <div class="gal">
+        <figure data-a>
+          <div class="frame dashed"><img src="assets/recent commissions box 1.webp" alt="Teal travel trunk"></div>
+          <figcaption>Teal travel trunk with monogram</figcaption>
+        </figure>
+        <figure data-a>
+          <div class="frame dashed"><img src="assets/recent commissions box 2.webp" alt="Sand-dial watch"></div>
+          <figcaption>Sand-dial automatic watch</figcaption>
+        </figure>
+        <figure data-a>
+          <div class="frame dashed"><img src="assets/recent commissions box 3.webp" alt="Clay-red folio"></div>
+          <figcaption>Clay-red document folio</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq grad">
+    <div class="wrap fq">
+      <div>
+        <h2 data-split="chars">Questions,<br>answered</h2>
+        <div class="acc">
+          <details data-a>
+            <summary>How long does a bespoke commission take?</summary>
+            <p>Most commissions are delivered in six to ten weeks, depending on leather curing and metal finishing.</p>
+          </details>
+          <details data-a>
+            <summary>Do you repair other brands?</summary>
+            <p>Yes. We quote any heritage leather piece or mechanical watch free of charge within three working days.</p>
+          </details>
+          <details data-a>
+            <summary>Can I cancel a commission?</summary>
+            <p>You can cancel before hide cutting begins for a full refund of your commission deposit.</p>
+          </details>
+          <details data-a>
+            <summary>Do you ship worldwide?</summary>
+            <p>We ship fully insured to most countries; all import documentation and tracking are managed by our concierge.</p>
+          </details>
+        </div>
+      </div>
+      <aside class="cta" data-a>
+        <h3>Not sure where to start?</h3>
+        <p>Book a free 20-minute consultation and we will suggest the right atelier service.</p>
+        <a class="btn btn-3d cta-btn" href="404.html">Book a consultation</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-top">
+        <div class="sf-brand">
+          <a href="index.html" class="sf-logo" aria-label="Stackly home">
+            <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="156" height="42" loading="lazy">
+          </a>
+          <p>Stackly makes leather goods, watches, and jewellery by hand in Florence, and looks after them for life.</p>
+          <a class="sf-mail" href="mailto:hello@thestackly.com">hello@thestackly.com <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <nav class="sf-col" aria-label="Shop">
+          <h4 class="sf-title" data-heading-glow>Shop</h4>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Journal</a>
+          <a href="cart.html">Cart</a>
+          <a href="signup.html">Create account</a>
+        </nav>
+        <nav class="sf-col" aria-label="Company">
+          <h4 class="sf-title" data-heading-glow>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="signin.html">Sign in</a>
+        </nav>
+        <div class="sf-col sf-visit">
+          <h4 class="sf-title" data-heading-glow>Visit</h4>
+          <address>
+            <span>MMR Complex, Periyakollappatty</span>
+            <span>Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </address>
+          <a class="sf-phone" href="tel:7010792745"><i class="fa-solid fa-phone" aria-hidden="true"></i>7010792745</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="sf-bottom">
+        <small>&copy; 2026 Stackly. Crafted slowly in Florence.</small>
+        <span class="sf-note">Handmade in Florence &middot; Shipped worldwide</span>
+        <a class="sf-back" href="#" aria-label="Back to top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/intro.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/sticky-nav.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="js/heading-glow.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

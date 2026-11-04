@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="js/restore-scroll.js"></script>
+  <title>Cart - Stackly Florence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300..900&family=Playfair+Display:ital,wght@1,400;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body class="cart-page">
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+  <!-- Mobile Sticky Header (Mobile View: Logo on Left, Hamburger on Right) -->
+  <header class="mobile-sticky-header" id="mobileStickyHeader" aria-label="Mobile Navigation Header">
+    <div class="mobile-header-inner">
+      <a href="index.html" class="mobile-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo-recoloured.webp" alt="Stackly Florence">
+      </a>
+      <button class="hamburger-btn mobile-hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <header class="cart-head g">
+    <nav class="wrap nav">
+      <a href="index.html" class="logo">
+        <img src="assets/stackly-logo-recoloured.webp" alt="Stackly Florence">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="auth">
+          <a class="pill" href="index.html">Back to shop</a>
+          <a class="pill" href="cart.html" aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.66 17h8.66a2 2 0 0 0 1.97-1.61L23 6H6"></path>
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap cart-main">
+    <p class="crumb"><a href="index.html">Home</a> / Cart</p>
+    <h1>Your cart</h1>
+
+    <div class="cart-grid">
+      <section class="cart-list" id="cartList" aria-live="polite"></section>
+
+      <aside class="cart-sum">
+        <h3>Order summary</h3>
+        <div class="cart-row"><span>Subtotal</span><b id="cartSub">$0</b></div>
+        <div class="cart-row"><span>Shipping</span><span>Complimentary Insured</span></div>
+        <div class="cart-row total"><span>Total</span><b id="cartTotal">$0</b></div>
+        <a class="checkout" href="404.html">Proceed to checkout</a>
+        <a class="continue" href="index.html">Continue shopping</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-top">
+        <div class="sf-brand">
+          <a href="index.html" class="sf-logo" aria-label="Stackly home">
+            <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="156" height="42" loading="lazy">
+          </a>
+          <p>Stackly makes leather goods, watches, and jewellery by hand in Florence, and looks after them for life.</p>
+          <a class="sf-mail" href="mailto:hello@thestackly.com">hello@thestackly.com <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <nav class="sf-col" aria-label="Shop">
+          <h4 class="sf-title" data-heading-glow>Shop</h4>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Journal</a>
+          <a href="cart.html">Cart</a>
+          <a href="signup.html">Create account</a>
+        </nav>
+        <nav class="sf-col" aria-label="Company">
+          <h4 class="sf-title" data-heading-glow>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="signin.html">Sign in</a>
+        </nav>
+        <div class="sf-col sf-visit">
+          <h4 class="sf-title" data-heading-glow>Visit</h4>
+          <address>
+            <span>MMR Complex, Periyakollappatty</span>
+            <span>Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </address>
+          <a class="sf-phone" href="tel:7010792745"><i class="fa-solid fa-phone" aria-hidden="true"></i>7010792745</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="sf-bottom">
+        <small>&copy; 2026 Stackly. Crafted in Florence.</small>
+        <span class="sf-note">Handmade in Florence &middot; Shipped worldwide</span>
+        <a class="sf-back" href="#" aria-label="Back to top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var products = {
+        'aurelia-tote': { name: 'Aurelia tote', meta: 'Hand-stitched calfskin', price: 2850, img: 'assets/aurelia-jellyfish.jpg', alt: 'Aurelia tote' },
+        'lune-watch': { name: 'Lune watch', meta: '18k gold case', price: 7400, img: 'assets/lune-watch.jpg', alt: 'Lune watch' },
+        'soir-parfum': { name: 'Soir parfum', meta: 'Eau de parfum, 50 ml', price: 310, img: 'assets/soir-parfum.jpg', alt: 'Soir parfum' },
+        'halo-ring': { name: 'Halo ring', meta: 'Brilliant-cut solitaire', price: 4200, img: 'assets/halo-ring.jpg', alt: 'Halo ring' }
+      };
+
+      var key = new URLSearchParams(window.location.search).get('add');
+      if (key && products[key]) {
+        try { localStorage.setItem('stackly_cart_item', key); } catch (e) {}
+      }
+      var savedKey = null;
+      try { savedKey = localStorage.getItem('stackly_cart_item'); } catch (e) {}
+      var activeKey = key || savedKey;
+      var item = activeKey && products[activeKey];
+      var list = document.getElementById('cartList');
+      var money = function (n) { return '$' + n.toLocaleString('en-US'); };
+
+      if (!item) {
+        list.innerHTML = '<div class="cart-empty"><h3>Your cart is empty</h3><p>Add a piece from the collection to see it here.</p><a class="blob" href="404.html">Browse the collection</a></div>';
+        document.getElementById('cartSub').textContent = '$0';
+        document.getElementById('cartTotal').textContent = '$0';
+        return;
+      }
+
+      list.innerHTML = '<article class="cart-item">' +
+        '<img src="' + item.img + '" alt="' + item.alt + '">' +
+        '<div class="ci-main"><h3>' + item.name + '</h3><p>' + item.meta + '</p>' +
+        '<div class="ci-qty"><span>Qty</span><b>1</b></div></div>' +
+        '<div class="ci-side"><b>' + money(item.price) + '</b><a href="cart.html" id="removeCart">Remove</a></div>' +
+        '</article>';
+
+      document.getElementById('cartSub').textContent = money(item.price);
+      document.getElementById('cartTotal').textContent = money(item.price);
+
+      var removeBtn = document.getElementById('removeCart');
+      if (removeBtn) {
+        removeBtn.addEventListener('click', function (e) {
+          try { localStorage.removeItem('stackly_cart_item'); } catch (e) {}
+        });
+      }
+    })();
+  </script>
+  <script src="js/intro.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/sticky-nav.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="js/heading-glow.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

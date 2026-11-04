@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign Up | Stackly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signin.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    .signup-card {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 38px 40px 36px;
+      box-shadow: 0 20px 50px rgba(53, 51, 49, 0.08), 0 2px 10px rgba(0, 0, 0, 0.03);
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 600px) {
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+      .signup-card {
+        padding: 24px 18px 22px;
+        border-radius: 26px;
+      }
+    }
+    .terms-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 18px 0 22px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #605c58;
+    }
+    .terms-box input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: #2f8f8a;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    .terms-box input[type="checkbox"].is-invalid {
+      outline: 2px solid #b8572d;
+      outline-offset: 2px;
+    }
+    .terms-error {
+      display: none;
+      margin: -8px 0 18px;
+      font-family: var(--sans, sans-serif);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #b8572d;
+    }
+    .terms-error.is-visible {
+      display: block;
+    }
+    .name-error,
+    .password-error {
+      display: none;
+      margin: 6px 0 0 20px;
+      font-family: var(--sans, sans-serif);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #b8572d;
+    }
+    .name-error.is-visible,
+    .password-error.is-visible {
+      display: block;
+    }
+    .signin-input.is-invalid {
+      border-color: #b8572d;
+      background: #fff7f4;
+    }
+    .signin-input.is-invalid:focus {
+      border-color: #b8572d;
+      box-shadow: 0 0 0 4px rgba(184, 87, 45, 0.15);
+    }
+  </style>
+</head>
+
+<body class="signin-page signup-page">
+  <!-- Registration Hero Section -->
+  <section class="signin-hero">
+    <svg class="auth-bg" viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="authGlowMint" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#a9d6cf" stop-opacity=".62"/>
+          <stop offset="55%" stop-color="#a9d6cf" stop-opacity=".24"/>
+          <stop offset="100%" stop-color="#a9d6cf" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="authGlowTeal" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#2f8f8a" stop-opacity=".3"/>
+          <stop offset="60%" stop-color="#2f8f8a" stop-opacity=".1"/>
+          <stop offset="100%" stop-color="#2f8f8a" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="authGlowRust" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#b8572d" stop-opacity=".18"/>
+          <stop offset="65%" stop-color="#b8572d" stop-opacity=".06"/>
+          <stop offset="100%" stop-color="#b8572d" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="authLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#2f8f8a" stop-opacity="0"/>
+          <stop offset="35%" stop-color="#2f8f8a" stop-opacity=".38"/>
+          <stop offset="65%" stop-color="#a9d6cf" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#b8572d" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g class="auth-bg-blob auth-bg-blob-a">
+        <ellipse cx="225" cy="205" rx="330" ry="270" fill="url(#authGlowMint)"/>
+      </g>
+      <g class="auth-bg-blob auth-bg-blob-b">
+        <ellipse cx="1260" cy="675" rx="380" ry="290" fill="url(#authGlowTeal)"/>
+      </g>
+      <g class="auth-bg-blob auth-bg-blob-c">
+        <ellipse cx="1185" cy="130" rx="220" ry="185" fill="url(#authGlowRust)"/>
+      </g>
+      <ellipse cx="720" cy="420" rx="430" ry="290" fill="url(#authGlowMint)" opacity=".55"/>
+      <g class="auth-bg-rings auth-bg-rings-a" fill="none" stroke="#2f8f8a">
+        <circle cx="245" cy="205" r="110" stroke-opacity=".2" stroke-width="1.4" stroke-dasharray="5 11"/>
+        <circle cx="245" cy="205" r="165" stroke-opacity=".12" stroke-width="1.1" stroke-dasharray="2 15"/>
+        <circle cx="245" cy="205" r="220" stroke-opacity=".08" stroke-width="1"/>
+      </g>
+      <g class="auth-bg-rings auth-bg-rings-b" fill="none" stroke="#2f8f8a">
+        <circle cx="1300" cy="650" r="120" stroke-opacity=".18" stroke-width="1.3" stroke-dasharray="4 12"/>
+        <circle cx="1300" cy="650" r="180" stroke-opacity=".1" stroke-width="1" stroke-dasharray="2 16"/>
+      </g>
+      <g class="auth-bg-lines" fill="none" stroke="url(#authLineGradient)" stroke-linecap="round">
+        <path class="auth-bg-line auth-bg-line-a" stroke-width="1.5" d="M-100 610 C 190 470, 450 760, 760 570 S 1260 340, 1540 470"/>
+        <path class="auth-bg-line auth-bg-line-b" stroke-width="1.1" d="M-80 740 C 240 630, 430 840, 800 690 S 1320 520, 1560 620"/>
+      </g>
+      <g class="auth-bg-dots" fill="#2f8f8a">
+        <circle class="auth-bg-dot auth-bg-dot-a" cx="155" cy="450" r="4"/>
+        <circle class="auth-bg-dot auth-bg-dot-b" cx="355" cy="625" r="2.5"/>
+        <circle class="auth-bg-dot auth-bg-dot-c" cx="1120" cy="255" r="3"/>
+        <circle class="auth-bg-dot auth-bg-dot-d" cx="1280" cy="420" r="2.2"/>
+        <circle class="auth-bg-dot auth-bg-dot-e" cx="985" cy="740" r="3.5"/>
+      </g>
+    </svg>
+
+    <div class="wrap">
+      <div class="auth-topbar">
+        <a class="auth-logo" href="index.html" aria-label="Stackly home">
+          <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+        </a>
+        <a class="auth-home-btn" href="index.html">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Back to Home
+        </a>
+      </div>
+      <div class="signup-card frame">
+        <h1 data-split="chars">Sign Up</h1>
+        <p class="signin-sub" data-split="words">Create your account to get started.</p>
+
+        <form class="signin-form" id="signupForm">
+          <div class="field-row">
+            <div class="field">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" class="signin-input" placeholder="Enter first name" required autocomplete="given-name" aria-describedby="firstNameError">
+              <span class="name-error" id="firstNameError" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" class="signin-input" placeholder="Enter last name" required autocomplete="family-name" aria-describedby="lastNameError">
+              <span class="name-error" id="lastNameError" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="signupEmail">Email Address</label>
+            <input type="email" id="signupEmail" class="signin-input" placeholder="yourname@gmail.com" required autocomplete="email">
+          </div>
+
+          <!-- Password with eye toggle & dual-eye fix -->
+          <div class="field">
+            <label for="newPassword">Password</label>
+            <div class="password-wrap">
+              <input type="password" id="newPassword" class="signin-input" placeholder="••••••••" required autocomplete="new-password" aria-describedby="passwordError">
+              <button type="button" class="eye-toggle-btn" aria-label="Toggle password visibility" tabindex="-1">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+            <span class="password-error" id="passwordError" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-wrap">
+              <input type="password" id="confirmPassword" class="signin-input" placeholder="••••••••" required autocomplete="new-password" aria-describedby="confirmPasswordError">
+              <button type="button" class="eye-toggle-btn" aria-label="Toggle password visibility" tabindex="-1">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+            <span class="password-error" id="confirmPasswordError" aria-live="polite"></span>
+          </div>
+
+          <label class="terms-box">
+            <input type="checkbox" id="termsCheckbox" required aria-describedby="termsError">
+            <span>I agree to the Terms and Conditions and Privacy Policy.</span>
+          </label>
+          <span class="terms-error" id="termsError" aria-live="polite"></span>
+
+          <button type="submit" class="signin-btn">
+            <span>Create Account</span>
+            <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+          </button>
+        </form>
+
+        <p class="signin-foot-link">
+          Already registered? <a href="signin.html">Sign in here</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#a9d6cf" opacity=".55"/>
+      </svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z" fill="#2f8f8a" opacity=".3"/>
+      </svg>
+    </div>
+  </section>
+
+  <script>
+    // Password visibility toggle for the auth forms
+    document.querySelectorAll('.eye-toggle-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var wrap = btn.closest('.password-wrap');
+        var input = wrap && wrap.querySelector('input');
+        var icon = btn.querySelector('i');
+        if (!input) return;
+        var show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+        if (icon) {
+          icon.classList.toggle('fa-eye', !show);
+          icon.classList.toggle('fa-eye-slash', show);
+        }
+        input.focus();
+      });
+    });
+  </script>
+  <script>
+    // Inline validation for first and last name fields
+    (function () {
+      var form = document.getElementById('signupForm');
+      var first = document.getElementById('firstName');
+      var last = document.getElementById('lastName');
+      var firstError = document.getElementById('firstNameError');
+      var lastError = document.getElementById('lastNameError');
+      if (!form || !first || !last) return;
+
+      function setError(input, error, show) {
+        if (!input || !error) return;
+        if (show) {
+          error.textContent = 'Only alphabets are allowed.';
+          error.classList.add('is-visible');
+          input.classList.add('is-invalid');
+          input.setAttribute('aria-invalid', 'true');
+        } else {
+          error.textContent = '';
+          error.classList.remove('is-visible');
+          input.classList.remove('is-invalid');
+          input.removeAttribute('aria-invalid');
+        }
+      }
+
+      function validateName(input, error) {
+        var value = (input.value || '').trim();
+        var invalid = /[0-9]/.test(value);
+        setError(input, error, invalid);
+        return !invalid;
+      }
+
+      [[first, firstError], [last, lastError]].forEach(function (pair) {
+        var input = pair[0];
+        var error = pair[1];
+        input.addEventListener('input', function () {
+          validateName(input, error);
+        });
+        input.addEventListener('blur', function () {
+          validateName(input, error);
+        });
+      });
+
+      document.addEventListener('submit', function (e) {
+        if (e.target !== form) return;
+        var firstValid = validateName(first, firstError);
+        var lastValid = validateName(last, lastError);
+        if (!firstValid || !lastValid) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
+          (firstValid ? last : first).focus();
+        }
+      }, true);
+    })();
+  </script>
+  <script>
+    // Inline validation for the terms & conditions checkbox
+    (function () {
+      var form = document.getElementById('signupForm');
+      var checkbox = document.getElementById('termsCheckbox');
+      var error = document.getElementById('termsError');
+      if (!form || !checkbox || !error) return;
+
+      function showTermsError() {
+        error.textContent = 'Please accept terms and conditions.';
+        error.classList.add('is-visible');
+        checkbox.classList.add('is-invalid');
+        checkbox.setAttribute('aria-invalid', 'true');
+      }
+
+      function clearTermsError() {
+        error.textContent = '';
+        error.classList.remove('is-visible');
+        checkbox.classList.remove('is-invalid');
+        checkbox.removeAttribute('aria-invalid');
+      }
+
+      checkbox.addEventListener('invalid', function (e) {
+        e.preventDefault();
+        showTermsError();
+      });
+
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) clearTermsError();
+      });
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
+          if (checkbox.checked) {
+            clearTermsError();
+          } else {
+            showTermsError();
+          }
+        });
+      }
+    })();
+  </script>
+  <script>
+    // Password validation for the signup form
+    (function () {
+      var form = document.getElementById('signupForm');
+      var password = document.getElementById('newPassword');
+      var confirmPassword = document.getElementById('confirmPassword');
+      var passwordError = document.getElementById('passwordError');
+      var confirmPasswordError = document.getElementById('confirmPasswordError');
+      if (!form || !password || !confirmPassword || !passwordError || !confirmPasswordError) return;
+
+      var hasSubmitted = false;
+
+      function setError(input, error, message) {
+        if (message) {
+          error.textContent = message;
+          error.classList.add('is-visible');
+          input.classList.add('is-invalid');
+          input.setAttribute('aria-invalid', 'true');
+        } else {
+          error.textContent = '';
+          error.classList.remove('is-visible');
+          input.classList.remove('is-invalid');
+          input.removeAttribute('aria-invalid');
+        }
+      }
+
+      function validatePassword() {
+        var value = password.value || '';
+        if (!value) {
+          setError(password, passwordError, 'Password is required.');
+          return false;
+        }
+        if (value.length < 8 || !/[A-Z]/.test(value) || !/[a-z]/.test(value) || !/[0-9]/.test(value) || !/[^A-Za-z0-9]/.test(value)) {
+          setError(password, passwordError, 'Password must be at least 8 characters and include uppercase, lowercase, number, and special character.');
+          return false;
+        }
+        setError(password, passwordError, '');
+        return true;
+      }
+
+      function validateConfirmPassword() {
+        var value = confirmPassword.value || '';
+        if (!value) {
+          setError(confirmPassword, confirmPasswordError, 'Please confirm your password.');
+          return false;
+        }
+        if (value !== password.value) {
+          setError(confirmPassword, confirmPasswordError, 'Passwords do not match.');
+          return false;
+        }
+        setError(confirmPassword, confirmPasswordError, '');
+        return true;
+      }
+
+      password.addEventListener('input', function () {
+        if (hasSubmitted || password.classList.contains('is-invalid')) {
+          validatePassword();
+          if (confirmPassword.value) validateConfirmPassword();
+        }
+      });
+
+      password.addEventListener('blur', function () {
+        if (password.value || hasSubmitted) validatePassword();
+      });
+
+      confirmPassword.addEventListener('input', function () {
+        if (confirmPassword.value || hasSubmitted || confirmPassword.classList.contains('is-invalid')) {
+          validateConfirmPassword();
+        }
+      });
+
+      confirmPassword.addEventListener('blur', function () {
+        if (confirmPassword.value || hasSubmitted) validateConfirmPassword();
+      });
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
+          hasSubmitted = true;
+          validatePassword();
+          validateConfirmPassword();
+        });
+      }
+
+      form.addEventListener('submit', function (e) {
+        hasSubmitted = true;
+        e.preventDefault();
+        var passwordValid = validatePassword();
+        var confirmValid = validateConfirmPassword();
+        if (!passwordValid || !confirmValid) {
+          (passwordValid ? confirmPassword : password).focus();
+          return;
+        }
+        try {
+          sessionStorage.setItem('stackly_prev_url', window.location.href.split('#')[0]);
+          sessionStorage.setItem('stackly_prev_scroll', '0');
+          sessionStorage.removeItem('stackly_prev_section');
+          sessionStorage.removeItem('stackly_prev_section_offset');
+          sessionStorage.removeItem('stackly_restore_requested');
+        } catch (err) {}
+        window.location.href = '404.html';
+      });
+    })();
+  </script>
+  <script src="js/email-validation.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>
+

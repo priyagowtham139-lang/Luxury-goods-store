@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inventory & Materials | Stackly Florence</title>
+  <meta name="description" content="Monitor Stackly hides, hardware, thread and supplier quality against the Autumn limited runs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+
+<body class="dash-menu-page">
+
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+
+  <header class="dash-mobile-header">
+    <a class="dash-mobile-logo" href="index.html" aria-label="Stackly home">
+      <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+    </a>
+    <button class="dash-menu-toggle" type="button" aria-label="Open dashboard menu" aria-expanded="false" aria-controls="dashSidebar">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+  <div class="dash-nav-backdrop" id="dashNavBackdrop" aria-hidden="true"></div>
+
+  <main class="wrap dash-main" id="top">
+    <div class="dash-shell">
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="dash-sidebar-top">
+          <span class="dash-sidebar-label">Menu</span>
+          <button class="dash-sidebar-close" type="button" aria-label="Close dashboard menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="dash-sidebar-scroll">
+          <div class="sidebar-head">
+            <a class="sidebar-logo" href="admin-dashboard.html" aria-label="Stackly admin dashboard">
+              <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+            </a>
+          </div>
+        <nav class="sidebar-nav" aria-label="Admin dashboard navigation">
+          <a href="admin-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></a>
+          <a href="admin-orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a>
+          <a href="admin-inventory.html" class="is-active" aria-current="page"><i class="fa-solid fa-boxes-stacked"></i><span>Inventory</span></a>
+          <a href="admin-artisans.html"><i class="fa-solid fa-people-group"></i><span>Artisans</span></a>
+          <a href="admin-clients.html"><i class="fa-solid fa-user-group"></i><span>Clients</span></a>
+          <a href="admin-reports.html"><i class="fa-solid fa-chart-line"></i><span>Reports</span></a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <nav class="sidebar-nav sidebar-secondary" aria-label="Other destinations">
+            <a href="user-dashboard.html"><i class="fa-solid fa-gem"></i><span>User view</span></a>
+          <a href="index.html"><i class="fa-solid fa-house"></i><span>Back to site</span></a>
+        </nav>
+        <div class="sidebar-card">
+          <i class="fa-solid fa-shield-halved"></i>
+            <div><strong>Admin access</strong><span>Full admin controls</span></div>
+        </div>
+
+        <a class="sidebar-logout" href="signin.html" aria-label="Log out of your account">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span>
+        </a>
+        </div>
+      </aside>
+      <div class="dash-content">
+        <div class="dash-banner">
+          <div class="page-banner dark">
+            <div class="banner-info">
+              <div class="banner-avatar"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div>
+                <span class="eyebrow">Atelier operations · Materials</span>
+                <h1>Inventory &amp; materials</h1>
+                <p>Monitor the hides, hardware and thread that feed the Autumn runs. Reorder before a bench goes quiet and keep supplier quality visible to the floor.</p>
+              </div>
+            </div>
+            <div class="banner-actions"><a class="btn ghost-light" href="#suppliers"><i class="fa-solid fa-handshake"></i> Suppliers</a>
+                <a class="btn light" href="#"><i class="fa-solid fa-plus"></i> Purchase order</a></div>
+          </div>
+        </div>
+
+        <div class="dash-metrics">
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-layer-group"></i></div>
+            <div class="metric-data">
+              <b>64</b>
+              <span>Hides in stock</span>
+              <small>About 9 weeks of cutting</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div class="metric-data">
+              <b>38</b>
+              <span>Hardware lots</span>
+              <small>18k gold and palladium</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="metric-data">
+              <b>04</b>
+              <span>Low-stock alerts</span>
+              <small>2 below reorder point</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-coins"></i></div>
+            <div class="metric-data">
+              <b>€184k</b>
+              <span>Stock value</span>
+              <small>At landed cost</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Material ledger</h2>
+            <p>Current stock, reorder points and approved suppliers.</p>
+          </div>
+          <div class="head-actions"><a class="btn light" href="#"><i class="fa-solid fa-download"></i> Export stock</a></div>
+        </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Origin</th>
+                  <th>On hand</th>
+                  <th>Reorder at</th>
+                  <th>Supplier</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Vegetable-tanned calfskin</strong><span class="table-sub">Natural · 1.4 mm</span></td>
+                  <td>Tuscany, Italy</td>
+                  <td>18 hides</td>
+                  <td>12</td>
+                  <td>Conceria Puccini</td>
+                  <td><span class="status ok">Healthy</span></td>
+                  <td><a class="btn light sm" href="#">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Park-tanned calfskin</strong><span class="table-sub">Cream · 1.6 mm</span></td>
+                  <td>Tuscany, Italy</td>
+                  <td>06 hides</td>
+                  <td>10</td>
+                  <td>Conceria Puccini</td>
+                  <td><span class="status warn">Low stock</span></td>
+                  <td><a class="btn dark sm" href="#">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Lacquered canvas</strong><span class="table-sub">Teal Reverie · 600 g</span></td>
+                  <td>Como, Italy</td>
+                  <td>24 rolls</td>
+                  <td>15</td>
+                  <td>Tessitura Rovelli</td>
+                  <td><span class="status ok">Healthy</span></td>
+                  <td><a class="btn light sm" href="#">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td><strong>18k gold hardware</strong><span class="table-sub">Clasps · rings · rivets</span></td>
+                  <td>Arezzo, Italy</td>
+                  <td>38 lots</td>
+                  <td>20</td>
+                  <td>Orafi Toscani</td>
+                  <td><span class="status ok">Healthy</span></td>
+                  <td><a class="btn light sm" href="#">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Palladium clasps</strong><span class="table-sub">Brushed finish</span></td>
+                  <td>Vicenza, Italy</td>
+                  <td>09 lots</td>
+                  <td>12</td>
+                  <td>Orafi Toscani</td>
+                  <td><span class="status warn">Low stock</span></td>
+                  <td><a class="btn dark sm" href="#">Reorder</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Beeswax thread</strong><span class="table-sub">Signature orange · 0.6 mm</span></td>
+                  <td>Salem, Tamil Nadu</td>
+                  <td>42 spools</td>
+                  <td>25</td>
+                  <td>Filati del Duomo</td>
+                  <td><span class="status ok">Healthy</span></td>
+                  <td><a class="btn light sm" href="#">Reorder</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Low-stock alerts</h2>
+            <p>Materials that will interrupt a bench within three weeks.</p>
+          </div>
+          <div class="head-actions"><a class="btn light" href="#"><i class="fa-solid fa-bell"></i> Alert settings</a></div>
+        </div>
+          <div class="dash-grid three">
+            <div class="info-card">
+              <div class="info-icon rust"><i class="fa-solid fa-layer-group"></i></div>
+              <h4>Park-tanned calfskin</h4>
+              <p>Six hides left against a reorder point of ten. Covers roughly three weeks of Aurelia cutting.</p>
+              <div class="progress-row" style="margin-top:16px"><span>6 of 10 hides</span><span>Low</span></div>
+              <div class="progress rust"><i style="width:40%"></i></div>
+              <div class="metric-line"><span>Conceria Puccini</span><a class="btn dark sm" href="#">Reorder</a></div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon gold"><i class="fa-solid fa-link"></i></div>
+              <h4>Palladium clasps</h4>
+              <p>Nine lots remain. Two runs are scheduled before the next Vicenza delivery window.</p>
+              <div class="progress-row" style="margin-top:16px"><span>9 of 12 lots</span><span>Watch</span></div>
+              <div class="progress gold"><i style="width:62%"></i></div>
+              <div class="metric-line"><span>Orafi Toscani</span><a class="btn light sm" href="#">Reorder</a></div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-cube"></i></div>
+              <h4>Brass trunk corners</h4>
+              <p>Fourteen of twenty sets remain. Enough for the current Teal Reverie allocation only.</p>
+              <div class="progress-row" style="margin-top:16px"><span>14 of 20 sets</span><span>Watch</span></div>
+              <div class="progress"><i style="width:55%"></i></div>
+              <div class="metric-line"><span>Orafi Toscani</span><a class="btn light sm" href="#">Reorder</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section" id="suppliers">
+          <div class="section-head">
+          <div>
+            <h2>Supplier quality</h2>
+            <p>Approved partners, on-time delivery and the last audit date.</p>
+          </div>
+        </div>
+          <div class="dash-grid three">
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-leaf"></i></div>
+              <h4>Conceria Puccini</h4>
+              <p>Tuscany · vegetable and park-tanned calfskin. Family tannery, third-generation ownership.</p>
+              <div class="metric-line"><span>On-time delivery</span><b>98%</b></div>
+              <div class="metric-line"><span>Lead time</span><b>6 weeks</b></div>
+              <div class="metric-line"><span>Last audit</span><b>Mar 2026</b></div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon gold"><i class="fa-solid fa-gem"></i></div>
+              <h4>Orafi Toscani</h4>
+              <p>Arezzo · 18k gold and palladium hardware. Certified recycled metal on request.</p>
+              <div class="metric-line"><span>On-time delivery</span><b>96%</b></div>
+              <div class="metric-line"><span>Lead time</span><b>4 weeks</b></div>
+              <div class="metric-line"><span>Last audit</span><b>Jan 2026</b></div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon dark"><i class="fa-solid fa-scroll"></i></div>
+              <h4>Tessitura Rovelli</h4>
+              <p>Como · lacquered canvas and silk linings. Small-batch weaving for numbered runs.</p>
+              <div class="metric-line"><span>On-time delivery</span><b>94%</b></div>
+              <div class="metric-line"><span>Lead time</span><b>5 weeks</b></div>
+              <div class="metric-line"><span>Last audit</span><b>Jun 2026</b></div>
+            </div>
+          </div>
+          <div class="note" style="margin-top:18px">
+            <i class="fa-solid fa-circle-info"></i>
+            <p><strong>Before reordering:</strong> confirm the next run allocation with the bench master. Materials bought against a retired pattern cannot be returned to the supplier.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+  (function () {
+    function alignActive() {
+      var nav = document.querySelector('.dash-sidebar .sidebar-nav');
+      var active = nav && nav.querySelector('a.is-active');
+      if (!nav || !active || window.innerWidth > 1080) return;
+      var navBox = nav.getBoundingClientRect();
+      var activeBox = active.getBoundingClientRect();
+      nav.scrollLeft += (activeBox.left + activeBox.width / 2) - (navBox.left + navBox.width / 2);
+    }
+    alignActive();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(alignActive); }
+    window.addEventListener('load', alignActive);
+    window.addEventListener('resize', alignActive);
+  })();
+</script>
+<script src="js/dash-mobile-nav.js"></script>
+<script src="js/intro.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

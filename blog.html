@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="js/restore-scroll.js"></script>
+  <title>Journal | Stackly Florence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+  <!-- Mobile Sticky Header (Mobile View: Logo on Left, Hamburger on Right) -->
+  <header class="mobile-sticky-header" id="mobileStickyHeader" aria-label="Mobile Navigation Header">
+    <div class="mobile-header-inner">
+      <a href="index.html" class="mobile-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo-recoloured.webp" alt="Stackly Florence">
+      </a>
+      <button class="hamburger-btn mobile-hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  <div class="top">
+    <header class="hero bl" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <nav class="nav wrap">
+        <a class="logo" href="index.html">
+          <img src="assets/stackly-logo-recoloured.webp" alt="Stackly Florence">
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li class="on"><a class="on" href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="auth">
+            <a class="btn light icon-btn" href="cart.html" aria-label="Cart">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.66 17h8.66a2 2 0 0 0 1.97-1.61L23 6H6"></path>
+              </svg>
+            </a>
+            <a class="btn light" href="signin.html">Sign in</a>
+          </div>
+          <button class="hamburger-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="wrap hero-in">
+        <span class="ghost" aria-hidden="true">Journal</span>
+        <div class="hero-copy">
+          <h1 data-split="chars">Journal</h1>
+          <p data-split="words">Care guides, workshop notes and new arrivals from the Stackly atelier.</p>
+          <a class="btn btn-3d dark lg" href="404.html" data-a>Subscribe</a>
+        </div>
+        <figure class="frame hero-img"><img src="assets/blog_hero_1.webp" alt="Stackly leather atelier"></figure>
+      </div>
+      <div class="wave" aria-hidden="true">
+        <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none">
+          <path
+            d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z"
+            fill="#a9d6cf" opacity=".55" />
+        </svg>
+        <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none">
+          <path
+            d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z"
+            fill="#2f8f8a" opacity=".3" />
+        </svg>
+      </div>
+    </header>
+    <section class="feat">
+      <div class="wrap">
+        <div class="fbox" data-a>
+          <figure class="frame leather-frame"><img src="assets/featured-leather.webp" alt="Tufted black leather"></figure>
+          <div>
+            <small>Featured</small>
+            <h3>Why we sign every seam</h3>
+            <p>The story behind the one mark that no machine can make for us, and the 12 hands that earn it. Giulia
+              Ferri explains how a signature became our quality control.</p>
+            <a class="btn dark lg btn-3d" href="404.html">Read article</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="latest grad">
+    <div class="wrap">
+      <h2 data-split="chars">Latest articles</h2>
+      <p class="sub" data-split="words">Practical advice and workshop stories, twice a month.</p>
+      <div class="chips">
+        <span class="chip btn-3d on" data-f="All">All</span>
+        <span class="chip btn-3d" data-f="Care">Care</span>
+        <span class="chip btn-3d" data-f="Craft">Craft</span>
+        <span class="chip btn-3d" data-f="Guides">Guides</span>
+        <span class="chip btn-3d" data-f="News">News</span>
+      </div>
+      <div class="arts">
+        <article class="art" data-cat="Care" data-a>
+          <figure class="frame"><img src="assets/article-1.jpg" alt="How to care for calfskin"></figure>
+          <div class="bd"><span class="cat">Care</span>
+            <h3>How to care for calfskin</h3>
+            <p>Three habits that keep a bag supple for decades, from conditioning to storage.</p>
+          </div>
+        </article>
+        <article class="art" data-cat="Craft" data-a>
+          <figure class="frame"><img src="assets/article-2.jpg" alt="Inside the Florence atelier"></figure>
+          <div class="bd"><span class="cat">Craft</span>
+            <h3>Inside the Florence atelier</h3>
+            <p>A day with the people who sign your seams, hour by hour.</p>
+          </div>
+        </article>
+        <article class="art" data-cat="Guides" data-a>
+          <figure class="frame"><img src="assets/article-3.jpg" alt="Choosing your first watch"></figure>
+          <div class="bd"><span class="cat">Guide</span>
+            <h3>Choosing your first watch</h3>
+            <p>What to look for beyond the brand name, and what to skip.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path
+          d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z"
+          fill="#a9d6cf" opacity=".55" />
+      </svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path
+          d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z"
+          fill="#2f8f8a" opacity=".3" />
+      </svg>
+      <svg class="wv wv-c" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path
+          d="M0,85 C240,115 480,55 720,80 C960,105 1200,60 1440,85 C1680,115 1920,55 2160,80 C2400,105 2640,60 2880,85 L2880,120 L0,120 Z"
+          fill="#eef8f4" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="picks">
+    <div class="wrap">
+      <h2 data-split="chars">Editor's picks</h2>
+      <p class="sub" data-split="words">Longer reads we think are worth your evening.</p>
+      <div class="pk">
+        <article class="art" data-cat="x" data-a>
+          <figure class="frame"><img src="assets/pick-1.jpg" alt="The tanner who still uses bark"></figure>
+          <div class="bd"><span class="cat">Interview</span>
+            <h3>The tanner who still uses bark</h3>
+            <p>A visit to the Tuscan family behind our leather.</p>
+          </div>
+        </article>
+        <article class="art" data-cat="x" data-a>
+          <figure class="frame"><img src="assets/pick-2.jpg" alt="Packing light with one good bag"></figure>
+          <div class="bd"><span class="cat">Guide</span>
+            <h3>Packing light with one good bag</h3>
+            <p>Six trips, one tote, and what we learned.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="read grad">
+    <div class="wrap">
+      <h2 data-split="chars">Most read this month</h2>
+      <p class="sub" data-split="words">What other clients opened most.</p>
+      <div class="rl">
+        <a class="row2" href="#" data-a><b>1</b><span>How to care for calfskin</span><small>6 min read</small></a>
+        <a class="row2" href="#" data-a><b>2</b><span>Choosing your first watch</span><small>8 min read</small></a>
+        <a class="row2" href="#" data-a><b>3</b><span>What a bespoke commission costs</span><small>5 min read</small></a>
+        <a class="row2" href="#" data-a><b>4</b><span>Removing water marks from leather</span><small>4 min read</small></a>
+        <a class="row2" href="#" data-a><b>5</b><span>Why we repair for life</span><small>7 min read</small></a>
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg class="wv wv-a" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path
+          d="M0,60 C240,110 480,10 720,55 C960,100 1200,20 1440,60 C1680,110 1920,10 2160,55 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z"
+          fill="#a9d6cf" opacity=".55" />
+      </svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path
+          d="M0,80 C240,120 480,40 720,75 C960,110 1200,50 1440,80 C1680,120 1920,40 2160,75 C2400,110 2640,50 2880,80 L2880,120 L0,120 Z"
+          fill="#2f8f8a" opacity=".3" />
+      </svg>
+      <svg class="wv wv-c" viewBox="0 0 2880 120" preserveAspectRatio="none">
+        <path
+          d="M0,85 C240,115 480,55 720,80 C960,105 1200,60 1440,85 C1680,115 1920,55 2160,80 C2400,105 2640,60 2880,85 L2880,120 L0,120 Z"
+          fill="#eef8f4" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="makers">
+    <div class="wrap">
+      <h2 data-split="chars">Written by makers</h2>
+      <p class="sub" data-split="words">Every article is written or reviewed by someone who works in the atelier.</p>
+      <div class="mk">
+        <article class="val" data-a>
+          <div class="maker-top">
+            <span class="maker-badge">GF</span>
+            <span class="maker-role">Leather &amp; Craft</span>
+          </div>
+          <h3>Giulia Ferri</h3>
+          <p>Leatherwork, care and repair. Writes about the small habits that make bags last.</p>
+          <span class="maker-link">Articles by Giulia <i class="fa-solid fa-arrow-right"></i></span>
+        </article>
+        <article class="val dk" data-a>
+          <div class="maker-top">
+            <span class="maker-badge">MB</span>
+            <span class="maker-role">Watches &amp; Precision</span>
+          </div>
+          <h3>Marco Bellini</h3>
+          <p>Watches and movements. Explains complications without the jargon.</p>
+          <span class="maker-link">Articles by Marco <i class="fa-solid fa-arrow-right"></i></span>
+        </article>
+        <article class="val tl" data-a>
+          <div class="maker-top">
+            <span class="maker-badge">AR</span>
+            <span class="maker-role">Materials &amp; Sourcing</span>
+          </div>
+          <h3>Anika Rao</h3>
+          <p>Materials and sourcing. Reports each year on where our hides and metals come from.</p>
+          <span class="maker-link">Articles by Anika <i class="fa-solid fa-arrow-right"></i></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="jn grad" id="journal">
+    <div class="wrap" style="padding-top:60px">
+      <div class="jbox" data-a>
+        <h3>Get the journal</h3>
+        <p>One email, twice a month. No sales, only articles and early notice of new editions.</p>
+        <a class="btn light btn-3d" href="404.html">Subscribe</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-top">
+        <div class="sf-brand">
+          <a href="index.html" class="sf-logo" aria-label="Stackly home">
+            <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="156" height="42" loading="lazy">
+          </a>
+          <p>Stackly makes leather goods, watches, and jewellery by hand in Florence, and looks after them for life.</p>
+          <a class="sf-mail" href="mailto:hello@thestackly.com">hello@thestackly.com <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <nav class="sf-col" aria-label="Shop">
+          <h4 class="sf-title" data-heading-glow>Shop</h4>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Journal</a>
+          <a href="cart.html">Cart</a>
+          <a href="signup.html">Create account</a>
+        </nav>
+        <nav class="sf-col" aria-label="Company">
+          <h4 class="sf-title" data-heading-glow>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="signin.html">Sign in</a>
+        </nav>
+        <div class="sf-col sf-visit">
+          <h4 class="sf-title" data-heading-glow>Visit</h4>
+          <address>
+            <span>MMR Complex, Periyakollappatty</span>
+            <span>Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </address>
+          <a class="sf-phone" href="tel:7010792745"><i class="fa-solid fa-phone" aria-hidden="true"></i>7010792745</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="sf-bottom">
+        <small>&copy; 2026 Stackly. Crafted in Florence.</small>
+        <span class="sf-note">Handmade in Florence &middot; Shipped worldwide</span>
+        <a class="sf-back" href="#" aria-label="Back to top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/intro.js"></script>
+  <script src="js/mobile-nav.js"></script>
+  <script src="js/sticky-nav.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.chip').forEach(function (c) {
+      c.addEventListener('click', function () {
+        document.querySelectorAll('.chip').forEach(function (x) {
+          x.classList.remove('on');
+        });
+        c.classList.add('on');
+        var f = c.dataset.f;
+        document.querySelectorAll('.arts .art').forEach(function (a) {
+          a.classList.toggle('hide', f !== 'All' && a.dataset.cat !== f);
+        });
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="js/heading-glow.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

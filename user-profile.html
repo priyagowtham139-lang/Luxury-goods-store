@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profile & Preferences | Stackly Florence</title>
+  <meta name="description" content="Manage your Stackly collector profile, contact preferences and account security in one place.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+
+<body class="dash-menu-page">
+
+  <div id="introScreen" class="intro-screen" aria-hidden="true"></div>
+
+  <header class="dash-mobile-header">
+    <a class="dash-mobile-logo" href="index.html" aria-label="Stackly home">
+      <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+    </a>
+    <button class="dash-menu-toggle" type="button" aria-label="Open dashboard menu" aria-expanded="false" aria-controls="dashSidebar">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+  <div class="dash-nav-backdrop" id="dashNavBackdrop" aria-hidden="true"></div>
+
+  <main class="wrap dash-main" id="top">
+    <div class="dash-shell">
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="dash-sidebar-top">
+          <span class="dash-sidebar-label">Menu</span>
+          <button class="dash-sidebar-close" type="button" aria-label="Close dashboard menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="dash-sidebar-scroll">
+          <div class="sidebar-head">
+            <a class="sidebar-logo" href="user-dashboard.html" aria-label="Stackly dashboard">
+              <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="140" height="37">
+            </a>
+          </div>
+          <nav class="sidebar-nav" aria-label="Dashboard navigation">
+          <a href="user-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></a>
+          <a href="user-collection.html"><i class="fa-solid fa-gem"></i><span>Collection</span></a>
+          <a href="user-orders.html"><i class="fa-solid fa-bag-shopping"></i><span>Orders</span></a>
+          <a href="user-commissions.html"><i class="fa-solid fa-feather-pointed"></i><span>Commissions</span></a>
+          <a href="user-appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+          <a href="user-profile.html" class="is-active" aria-current="page"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <nav class="sidebar-nav sidebar-secondary" aria-label="Other destinations">
+          <a href="admin-dashboard.html"><i class="fa-solid fa-shield-halved"></i><span>Admin view</span></a>
+          <a href="index.html"><i class="fa-solid fa-house"></i><span>Back to site</span></a>
+        </nav>
+        <div class="sidebar-card">
+          <i class="fa-solid fa-gem"></i>
+            <div><strong>Gold Member</strong><span>Member #842</span></div>
+        </div>
+
+        <a class="sidebar-logout" href="signin.html" aria-label="Log out of your account">
+          <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span>
+        </a>
+        </div>
+      </aside>
+      <div class="dash-content">
+        <div class="dash-banner">
+          <div class="page-banner">
+            <div class="banner-info">
+              <div class="banner-avatar"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <span class="eyebrow">Collector dashboard · Account</span>
+                <h1>Profile &amp; preferences</h1>
+                <p>Keep your details current, choose how the atelier contacts you and manage the security of your collector account.</p>
+              </div>
+            </div>
+            <div class="banner-actions"><a class="btn light" href="user-collection.html"><i class="fa-solid fa-gem"></i> My collection</a>
+                <a class="btn dark" href="contact.html"><i class="fa-solid fa-headset"></i> Get help</a></div>
+          </div>
+        </div>
+
+        <div class="dash-metrics">
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-id-card"></i></div>
+            <div class="metric-data">
+              <b>#842</b>
+              <span>Collector ID</span>
+              <small>Atelier Gold</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-calendar"></i></div>
+            <div class="metric-data">
+              <b>2021</b>
+              <span>Member since</span>
+              <small>Five years with the atelier</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-crown"></i></div>
+            <div class="metric-data">
+              <b>Atelier Gold</b>
+              <span>Membership tier</span>
+              <small>6 pieces acquired</small>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon "><i class="fa-solid fa-circle-check"></i></div>
+            <div class="metric-data">
+              <b>90%</b>
+              <span>Profile complete</span>
+              <small>Add a phone number</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Personal details</h2>
+            <p>Used for provenance records, insured delivery and atelier correspondence.</p>
+          </div>
+          <div class="head-actions"><span class="tag"><i class="fa-solid fa-lock"></i> Private</span></div>
+        </div>
+          <div class="panel">
+            <form class="dash-form" onsubmit="return false">
+              <div class="field">
+                <label for="first-name">First name</label>
+                <input id="first-name" type="text" value="Marco" autocomplete="given-name" data-profile-first>
+              </div>
+              <div class="field">
+                <label for="last-name">Last name</label>
+                <input id="last-name" type="text" value="Bellini" autocomplete="family-name" data-profile-last>
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input id="email" type="email" value="marco.bellini@gmail.com" autocomplete="email">
+                <small>Receipts and provenance certificates are sent here.</small>
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input id="phone" type="tel" placeholder="7010792745" autocomplete="tel">
+                <small>Used by the courier on delivery day.</small>
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" type="text" value="Salem" autocomplete="address-level2">
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <select id="country" autocomplete="country-name">
+                  <option selected>Italy</option>
+                  <option>United Kingdom</option>
+                  <option>France</option>
+                  <option>Japan</option>
+                  <option>United States</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="address">Delivery address</label>
+                <textarea id="address" autocomplete="street-address">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</textarea>
+              </div>
+              <div class="form-actions">
+                <button class="btn dark" type="submit"><i class="fa-solid fa-check"></i> Save changes</button>
+                <button class="btn light" type="reset"><i class="fa-solid fa-rotate-left"></i> Discard</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Preferences</h2>
+            <p>Choose what the atelier sends you. You can change these at any time.</p>
+          </div>
+          <div class="head-actions"><span class="tag">No more than twice a month</span></div>
+        </div>
+          <div class="panel">
+            <form onsubmit="return false">
+              <div class="pref-list">
+                <label class="pref-item" for="pref-journal">
+                  <input id="pref-journal" type="checkbox" checked>
+                  <div><h4>Atelier journal</h4><p>Short stories from the bench, new materials and the people behind each piece.</p></div>
+                </label>
+                <label class="pref-item" for="pref-previews">
+                  <input id="pref-previews" type="checkbox" checked>
+                  <div><h4>Private previews</h4><p>First access to numbered runs and invitations to seasonal previews in Florence.</p></div>
+                </label>
+                <label class="pref-item" for="pref-care">
+                  <input id="pref-care" type="checkbox" checked>
+                  <div><h4>Care reminders</h4><p>Timely reminders when a registered piece is due for polish or calibration.</p></div>
+                </label>
+                <label class="pref-item" for="pref-lookbook">
+                  <input id="pref-lookbook" type="checkbox">
+                  <div><h4>Seasonal lookbook</h4><p>A printed lookbook posted to your address at the start of each season.</p></div>
+                </label>
+              </div>
+              <div class="form-actions" style="margin-top:18px">
+                <button class="btn dark" type="submit"><i class="fa-solid fa-check"></i> Update preferences</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="dash-section">
+          <div class="section-head">
+          <div>
+            <h2>Security &amp; access</h2>
+            <p>Protect your collector account and provenance records.</p>
+          </div>
+        </div>
+          <div class="dash-grid">
+            <div class="panel">
+              <div class="panel-head"><div><h3>Account security</h3><p>Last reviewed 12 October 2026.</p></div><span class="status ok">Protected</span></div>
+              <ul class="plain-list">
+                <li><div><h4>Password</h4><p>Last changed 12 Aug 2026</p></div><a class="btn light sm" href="#">Change</a></li>
+                <li><div><h4>Two-factor authentication</h4><p>Enabled · authenticator app</p></div><a class="btn light sm" href="#">Manage</a></li>
+                <li><div><h4>Active sessions</h4><p>2 devices · Florence and London</p></div><a class="btn light sm" href="#">Review</a></li>
+                <li><div><h4>Recovery email</h4><p>m.bellini@studio.it</p></div><a class="btn light sm" href="#">Update</a></li>
+              </ul>
+            </div>
+            <div class="panel soft">
+              <div class="panel-head"><div><h3>Your data stays in the atelier</h3><p>How Stackly handles collector records.</p></div></div>
+              <div class="note">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p><strong>Private by default.</strong> Provenance records, addresses and care notes are visible only to the artisans and concierge assigned to your account.</p>
+              </div>
+              <div class="detail-grid" style="margin-top:20px">
+                <div class="detail-item"><span>Data controller</span><b>Stackly Florence</b></div>
+                <div class="detail-item"><span>Retention</span><b>Life of the piece</b></div>
+                <div class="detail-item full"><span>Your rights</span><b>Request a copy, correction or deletion of your personal data at any time by contacting the atelier concierge.</b></div>
+              </div>
+              <a class="btn light" href="contact.html" style="margin-top:20px"><i class="fa-solid fa-envelope"></i> Contact the concierge</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+  (function () {
+    function alignActive() {
+      var nav = document.querySelector('.dash-sidebar .sidebar-nav');
+      var active = nav && nav.querySelector('a.is-active');
+      if (!nav || !active || window.innerWidth > 1080) return;
+      var navBox = nav.getBoundingClientRect();
+      var activeBox = active.getBoundingClientRect();
+      nav.scrollLeft += (activeBox.left + activeBox.width / 2) - (navBox.left + navBox.width / 2);
+    }
+    alignActive();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(alignActive); }
+    window.addEventListener('load', alignActive);
+    window.addEventListener('resize', alignActive);
+  })();
+</script>
+<script src="js/dash-mobile-nav.js"></script>
+<script src="js/intro.js"></script>
+<script src="js/email-validation.js"></script>
+  <script src="js/site-common.js"></script>
+</body>
+
+</html>

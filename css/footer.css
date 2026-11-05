@@ -94,37 +94,37 @@
   color: rgba(231, 239, 235, 0.66);
 }
 
-.sf-brand .sf-mail {
-  margin-top: 20px;
+.sf-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
 }
 
-.sf-mail {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+.sf-social a {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 201, 160, 0.28);
+  background: rgba(232, 201, 160, 0.08);
   color: #e8c9a0;
+  font-size: 15px;
   text-decoration: none;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(232, 201, 160, 0.32);
-  transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-.sf-mail:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.55);
-  gap: 13px;
+.sf-social a:hover {
+  color: #141a19;
+  background: #e8c9a0;
+  border-color: #e8c9a0;
+  transform: translateY(-3px);
 }
 
-.sf-mail i {
-  font-size: 11px;
-  transition: transform 0.3s ease;
-}
-
-.sf-mail:hover i {
-  transform: translateX(2px);
+.sf-social a:focus-visible {
+  outline: 2px solid #e8c9a0;
+  outline-offset: 3px;
 }
 
 /* ---------- link columns ---------- */
@@ -203,18 +203,54 @@
   display: block;
 }
 
-.sf-phone {
+.sf-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 !important;
+  color: rgba(231, 239, 235, 0.7) !important;
+  text-decoration: none;
+}
+
+.sf-address:hover {
+  color: #fff !important;
+  transform: none;
+}
+
+.sf-address > i {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.sf-address-lines {
+  min-width: 0;
+}
+
+.sf-phone,
+.sf-email {
   display: inline-flex !important;
   align-items: center;
   gap: 10px;
-  margin-bottom: 14px !important;
   font-size: 15px !important;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.sf-phone {
+  margin-bottom: 14px !important;
   color: #fff !important;
 }
 
-.sf-phone i {
+.sf-email {
+  margin-bottom: 0 !important;
+  font-size: 13.5px !important;
+  letter-spacing: 0.01em;
+  color: #e8c9a0 !important;
+}
+
+.sf-phone i,
+.sf-email i,
+.sf-address > i {
   display: inline-grid;
   place-items: center;
   width: 28px;
@@ -232,7 +268,13 @@
   transform: none;
 }
 
-.sf-phone:hover i {
+.sf-email:hover {
+  color: #fff !important;
+  transform: none;
+}
+
+.sf-phone:hover i,
+.sf-email:hover i {
   background: rgba(232, 201, 160, 0.24);
 }
 

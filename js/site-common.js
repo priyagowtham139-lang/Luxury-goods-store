@@ -98,7 +98,7 @@
       : null;
     if (!cta) return;
 
-    if (cta.closest('#contactForm, #loginForm, #signupForm, nav, .nav, .sidebar-nav, .dash-sidebar, .auth, .auth-topbar, .dash-mobile-header, .mobile-drawer, .mobile-sticky-header, .intro-screen, .page-404')) return;
+    if (cta.closest('#contactForm, #loginForm, #signupForm, #journalForm, nav, .nav, .sidebar-nav, .dash-sidebar, .auth, .auth-topbar, .dash-mobile-header, .mobile-drawer, .mobile-sticky-header, .intro-screen, .page-404')) return;
     if (cta.id === 'goBackBtn' || cta.hasAttribute('disabled')) return;
     if (cta.classList.contains('hamburger-btn') ||
         cta.classList.contains('dash-menu-toggle') ||

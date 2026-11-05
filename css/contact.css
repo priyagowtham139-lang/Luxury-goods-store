@@ -81,16 +81,19 @@ body.contact-page .hero.bl {
   padding-bottom: 0;
 }
 
-body.contact-page .contact-section {
-  background: transparent;
-  padding-top: 20px;
-}
-
 .contact-section {
   position: relative;
   padding: 60px 0 120px;
   background: radial-gradient(130% 60% at 50% 0, #a9d6cf 0, #c3e4dd 30%, #eaf6f2 70%, #f0f9f5 100%);
   overflow: hidden;
+}
+
+.contact-section.grad {
+  background: radial-gradient(120% 50% at 50% 0, #a9d6cf 0%, #c3e4dd 35%, #eaf6f2 70%, #eef8f4 100%);
+}
+
+.contact-section.grad-r {
+  background: linear-gradient(180deg, #b3dcd3 0, #eaf6f2 55%, #f0f9f5 100%);
 }
 
 .contact-section .wrap {

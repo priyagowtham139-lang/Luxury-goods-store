@@ -2014,6 +2014,7 @@ body {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  gap: 8px;
   border: 2px solid var(--btn-edge);
   border-radius: 99px;
   background: var(--btn-bg);
@@ -2027,6 +2028,10 @@ body {
     border-color 0.25s ease,
     color 0.25s ease;
   -webkit-tap-highlight-color: transparent;
+}
+
+.dash-main .btn > i {
+  margin-right: 0 !important;
 }
 
 /* Static top gloss */

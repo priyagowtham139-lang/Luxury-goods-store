@@ -611,6 +611,13 @@
 
   var quotes = $('.quotes');
   if (quotes) {
+    var quoteTrack = $('.quotes-track', quotes);
+    var quoteSet = $('.quotes-set', quoteTrack);
+    if (quoteTrack && quoteSet && !$('.quotes-set[aria-hidden="true"]', quoteTrack)) {
+      var quoteClone = quoteSet.cloneNode(true);
+      quoteClone.setAttribute('aria-hidden', 'true');
+      quoteTrack.appendChild(quoteClone);
+    }
     buildQ2Frame();
     if (window.ResizeObserver) new ResizeObserver(buildQ2Frame).observe(quotes);
     else window.addEventListener('resize', buildQ2Frame);
@@ -715,8 +722,8 @@
     /* — journal / testimonials — */
     glowHeading($('#journal h2'));
     revealWords($('#journal .sub'));
-    reveal($$('.quotes blockquote'), { y: 60, scale: .96, stagger: .14, duration: 1.05 });
-    gsap.from('.q1 span', {
+    reveal($$('.quotes-set:not([aria-hidden="true"]) blockquote'), { y: 60, scale: .96, stagger: .14, duration: 1.05 });
+    gsap.from('.q1 .quote-mark', {
       scale: .3, autoAlpha: 0, duration: 1.1, ease: 'back.out(2)',
       scrollTrigger: { trigger: '.quotes', start: 'top 82%', once: true }
     });

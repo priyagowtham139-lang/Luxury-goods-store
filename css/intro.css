@@ -3,6 +3,10 @@
    ============================================================ */
 /* The intro must never lock the page: it is a brief overlay, not a loader. */
 
+.skip-intro .intro-screen {
+  display: none !important;
+}
+
 .intro-screen {
   position: fixed;
   inset: 0;

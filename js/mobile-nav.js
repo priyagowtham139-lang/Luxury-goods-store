@@ -543,7 +543,7 @@
       // Do NOT intercept navigation, drawer, eye toggles, or filter chips
       if (cta.closest('.mobile-sticky-header, .drawer-links, .nav, .err-actions, .go-back-btn, .password-wrap')) return;
       if (cta.classList.contains('chip') || cta.tagName.toLowerCase() === 'span') return;
-      if (cta.type === 'submit' && cta.closest('form#contactForm')) return;
+      if (cta.type === 'submit' && cta.closest('form#contactForm, form#journalForm')) return;
 
       // Record the exact section and URL for seamless 404 Go Back fallback
       capturePrevPosition();

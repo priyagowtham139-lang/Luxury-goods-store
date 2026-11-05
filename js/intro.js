@@ -42,6 +42,7 @@
     if (!screen) return;
 
     var is404 = window.location.pathname.toLowerCase().indexOf('404') !== -1;
+    var skipRequested = /[?&]skipIntro=1(?:&|$)/.test(window.location.search);
     var restoreRequested = false;
     try {
       restoreRequested = sessionStorage.getItem('stackly_restore_requested') === 'true';
@@ -53,7 +54,7 @@
 
     // Avoid the loading/scrolling blocker on 404 or when returning from 404.
     // The intro replays on every normal page load (home and all sub-pages).
-    if (reduced || is404 || restoreRequested || late) {
+    if (reduced || is404 || skipRequested || restoreRequested || late) {
       if (screen.parentNode) screen.parentNode.removeChild(screen);
       doc.documentElement.classList.remove('intro-pending');
       doc.body.classList.remove('intro-active');

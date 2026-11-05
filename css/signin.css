@@ -82,77 +82,18 @@ p[data-split] a {
   overflow: hidden;
 }
 
-.auth-bg-blob,
-.auth-bg-rings,
-.auth-bg-line,
-.auth-bg-dot {
+.auth-bg-rings {
   transform-box: fill-box;
   transform-origin: center;
-}
-
-.auth-bg-blob-a {
-  animation: authBgFloatA 18s ease-in-out infinite alternate;
-}
-
-.auth-bg-blob-b {
-  animation: authBgFloatB 22s -4s ease-in-out infinite alternate;
-}
-
-.auth-bg-blob-c {
-  animation: authBgFloatC 15s -2s ease-in-out infinite alternate-reverse;
+  will-change: transform;
 }
 
 .auth-bg-rings-a {
-  animation: authBgSpin 60s linear infinite;
+  animation: authBgSpin 90s linear infinite;
 }
 
 .auth-bg-rings-b {
-  animation: authBgSpinReverse 44s linear infinite;
-}
-
-.auth-bg-line {
-  stroke-dasharray: 22 16;
-  animation: authBgDash 24s linear infinite;
-}
-
-.auth-bg-line-b {
-  animation-duration: 32s;
-  animation-direction: reverse;
-}
-
-.auth-bg-dot {
-  animation: authBgPulse 5.5s ease-in-out infinite;
-}
-
-.auth-bg-dot-b {
-  animation-delay: -1.4s;
-}
-
-.auth-bg-dot-c {
-  animation-delay: -2.8s;
-}
-
-.auth-bg-dot-d {
-  animation-delay: -4.1s;
-}
-
-.auth-bg-dot-e {
-  animation-delay: -0.7s;
-}
-
-@keyframes authBgFloatA {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(42px, -34px) scale(1.1); }
-}
-
-@keyframes authBgFloatB {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-48px, -26px) scale(1.14); }
-}
-
-@keyframes authBgFloatC {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-30px, 38px) scale(1.08); }
+  animation: authBgSpinReverse 70s linear infinite;
 }
 
 @keyframes authBgSpin {
@@ -163,27 +104,21 @@ p[data-split] a {
   to { transform: rotate(-360deg); }
 }
 
-@keyframes authBgDash {
-  to { stroke-dashoffset: -760; }
-}
-
-@keyframes authBgPulse {
-  0%, 100% { opacity: 0.35; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.25); }
-}
-
 @media (max-width: 680px) {
   .auth-bg {
     opacity: 0.82;
   }
+
+  .auth-bg-rings {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .auth-bg-blob,
-  .auth-bg-rings,
-  .auth-bg-line,
-  .auth-bg-dot {
+  .auth-bg-rings {
     animation: none !important;
+    will-change: auto;
   }
 }
 
@@ -2135,6 +2070,112 @@ p[data-split] a {
 @media (max-width: 480px) {
   .signin-page .signin-hero {
     padding-top: 20px !important;
+  }
+}
+
+/* ---------- two-column sign-in layout ---------- */
+.signin-page .auth-topbar {
+  max-width: 1130px;
+}
+
+.signin-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 460px;
+  gap: 56px;
+  align-items: center;
+  max-width: 1130px;
+  margin: 0 auto;
+}
+
+.signin-info {
+  position: relative;
+  z-index: 1;
+}
+
+.signin-info-title {
+  font-family: var(--serif);
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.signin-info-sub {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(52, 49, 47, 0.66);
+  margin: 14px 0 0;
+  max-width: 480px;
+}
+
+.signin-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.signin-benefit {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(47, 143, 138, 0.16);
+  border-radius: 20px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 10px 26px rgba(53, 51, 49, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+.signin-benefit h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.signin-benefit p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(52, 49, 47, 0.66);
+  margin: 0;
+}
+
+.signin-split .signin-card {
+  margin: 0;
+  max-width: 460px;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .signin-page .auth-topbar {
+    max-width: 640px;
+  }
+  .signin-split {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .signin-info {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .signin-info-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .signin-benefits {
+    text-align: left;
+  }
+  .signin-split .signin-card {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .signin-info-title {
+    font-size: 32px;
+  }
+  .signin-benefits {
+    grid-template-columns: 1fr;
   }
 }
 

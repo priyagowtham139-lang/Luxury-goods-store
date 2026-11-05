@@ -501,32 +501,7 @@
     $$('.mini-nav ul li').forEach(function (li, idx) { li.classList.toggle('on', idx === i); });
   }
 
-  var navMap = [
-    { sel: '#about', i: 1 },
-    { sel: '#services', i: 2 },
-    { sel: '#journal', i: 3 },
-    { sel: '#contact', i: 4 }
-  ];
-  function updateActiveNav() {
-    var mid = window.innerHeight * .4;
-    var idx = 0, passed = 0;
-    navMap.forEach(function (m) {
-      var sec = $(m.sel);
-      if (!sec) return;
-      var r = sec.getBoundingClientRect();
-      if (r.top <= mid) passed = m.i;
-      if (r.top <= mid && r.bottom > mid) idx = m.i;
-    });
-    setActiveNav(idx || passed);
-  }
-  var navTick = false;
-  window.addEventListener('scroll', function () {
-    if (navTick) return;
-    navTick = true;
-    requestAnimationFrame(function () { navTick = false; updateActiveNav(); });
-  }, { passive: true });
-  window.addEventListener('load', updateActiveNav);
-  updateActiveNav();
+  setActiveNav(0);
 
   var toTop = $('#toTop');
   if (toTop) {
@@ -561,6 +536,13 @@
 
   var quotes = $('.quotes');
   if (quotes) {
+    var quoteTrack = $('.quotes-track', quotes);
+    var quoteSet = $('.quotes-set', quoteTrack);
+    if (quoteTrack && quoteSet && !$('.quotes-set[aria-hidden="true"]', quoteTrack)) {
+      var quoteClone = quoteSet.cloneNode(true);
+      quoteClone.setAttribute('aria-hidden', 'true');
+      quoteTrack.appendChild(quoteClone);
+    }
     buildQ2Frame();
     if (window.ResizeObserver) new ResizeObserver(buildQ2Frame).observe(quotes);
     else window.addEventListener('resize', buildQ2Frame);
@@ -665,8 +647,8 @@
     /* — journal / testimonials — */
     glowHeading($('#journal h2'));
     revealWords($('#journal .sub'));
-    reveal($$('.quotes blockquote'), { y: 60, scale: .96, stagger: .14, duration: 1.05 });
-    gsap.from('.q1 span', {
+    reveal($$('.quotes-set:not([aria-hidden="true"]) blockquote'), { y: 60, scale: .96, stagger: .14, duration: 1.05 });
+    gsap.from('.q1 .quote-mark', {
       scale: .3, autoAlpha: 0, duration: 1.1, ease: 'back.out(2)',
       scrollTrigger: { trigger: '.quotes', start: 'top 82%', once: true }
     });

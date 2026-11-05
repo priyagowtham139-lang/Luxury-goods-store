@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <script src="js/restore-scroll.js"></script>
+  <script>if (/[?&]skipIntro=1(?:&|$)/.test(location.search)) document.documentElement.classList.add('skip-intro');</script>
   <title>Stackly - Luxury goods made slowly in Florence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +75,7 @@
       </div>
       <div class="hero-art">
         <span class="ring"></span>
-        <img src="assets/image.webp" alt="Aurelia cream calfskin handbag with gold jewellery">
+        <img src="assets/image-compressed.webp" alt="Aurelia cream calfskin handbag with gold jewellery">
         <div class="b96"><svg class="badge-dots" viewBox="0 0 146 126" aria-hidden="true" focusable="false">
             <path d="M63 0H83A63 63 0 0 1 146 63V99A27 27 0 0 1 119 126H63A63 63 0 0 1 0 63A63 63 0 0 1 63 0Z" />
           </svg><small>In the run</small><b>96</b></div>
@@ -96,8 +97,8 @@
       <h3 class="sub w460">Five houses of craft, each with its own workshop and waiting list. Every category is made by
         a dedicated team, so a watch is never rushed by the people who stitch our bags.</h3>
       <div class="bento">
-        <a class="cat leather" href="#"><i>128</i>
-          <div class="frame"><img src="assets/bento-leather.jpg" alt="Handcrafted leather bag"><svg class="frame-border"
+        <a class="cat leather" href="404.html"><i>128</i>
+          <div class="frame"><img src="assets/bento leather.webp" alt="Handcrafted leather bag"><svg class="frame-border"
               aria-hidden="true" focusable="false">
               <rect />
             </svg>
@@ -105,16 +106,16 @@
             <p>Totes, trunks and slim wallets in park-tanned calfskin that darkens to honey with use.</p>
           </div>
         </a>
-        <a class="cat watches" href="#"><i>64</i><img src="assets/bento-watch.jpg" alt="Watches">
+        <a class="cat watches" href="404.html"><i>64</i><img src="assets/bento watch.webp" alt="Watches">
           <h5>Watches</h5>
         </a>
-        <a class="cat jew" href="#"><i>92</i><img src="assets/bento-jewellery.jpg" alt="Jewellery">
+        <a class="cat jew" href="404.html"><i>92</i><img src="assets/bento jewellery.webp" alt="Jewellery">
           <h5>Jewellery</h5>
         </a>
-        <a class="cat frag" href="#"><i>47</i><img src="assets/bento-fragrance.jpg" alt="Fragrance">
+        <a class="cat frag" href="404.html"><i>47</i><img src="assets/bento fragrance.webp" alt="Fragrance">
           <h5>Fragrance</h5>
         </a>
-        <a class="cat silk" href="#"><i>35</i><img src="assets/bento-silk.jpg" alt="Silk">
+        <a class="cat silk" href="404.html"><i>35</i><img src="assets/bento silk.webp" alt="Silk">
           <h5>Silk</h5>
         </a>
       </div>
@@ -150,7 +151,7 @@
 
   <section class="l about" id="about">
     <div class="wrap about-in">
-      <span class="arch-wrap"><img class="arch" src="assets/white-handbag.jpg" alt="White leather handbag"><svg
+      <span class="arch-wrap"><img class="arch" src="assets/image-3.webp" alt="White leather handbag"><svg
           class="arch-border" aria-hidden="true" focusable="false">
           <path />
         </svg></span>
@@ -182,7 +183,7 @@
       <div class="prods">
         <div class="prod">
           <div class="prod-img-wrap">
-            <img src="assets/aurelia-jellyfish.jpg" alt="Aurelia tote">
+            <img src="assets/aurelia fish.webp" alt="Aurelia tote">
             <svg class="prod-img-border" aria-hidden="true" focusable="false">
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
               <path />
@@ -193,7 +194,7 @@
         </div>
         <div class="prod">
           <div class="prod-img-wrap">
-            <img src="assets/lune-watch.jpg" alt="Lune watch">
+            <img src="assets/lune watch.webp" alt="Lune watch">
             <svg class="prod-img-border" aria-hidden="true" focusable="false">
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
               <path />
@@ -204,7 +205,7 @@
         </div>
         <div class="prod">
           <div class="prod-img-wrap">
-            <img src="assets/soir-parfum.jpg" alt="Soir parfum">
+            <img src="assets/soir parfum.webp" alt="Soir parfum">
             <svg class="prod-img-border" aria-hidden="true" focusable="false">
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
               <path />
@@ -215,7 +216,7 @@
         </div>
         <div class="prod">
           <div class="prod-img-wrap">
-            <img src="assets/halo-ring.jpg" alt="Halo ring">
+            <img src="assets/image-1.webp" alt="Halo ring">
             <svg class="prod-img-border" aria-hidden="true" focusable="false">
               <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="27" />
               <path />
@@ -280,17 +281,125 @@
     <div class="wrap">
       <h2>Heard at the counter</h2>
       <p class="sub">From clients who have been with us a while</p>
-      <div class="quotes">
-        <blockquote class="q1"><span>“</span>
-          <p>Nine airports, one tote. The leather has gone from pale tan to honey, and I would not undo a single mark.
-          </p><cite>Maeve K., Mumbai</cite>
-        </blockquote>
-        <blockquote class="q2">
-          <p>The watch came with a note from the man who built it. Nobody has ever done that for me.</p><cite>Daniel R.,
-            London</cite><svg class="q2-border" aria-hidden="true" focusable="false">
-            <path />
-          </svg>
-        </blockquote>
+      <div class="quotes" aria-label="Client testimonials">
+        <div class="quotes-track">
+          <div class="quotes-set">
+            <blockquote class="q1">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/testi3.webp" alt="Maeve K." loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Maeve K.</cite>
+                  <small>Mumbai &middot; Verified client</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>Nine airports, one tote. The leather has gone from pale tan to honey, and I would not undo a single mark.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+            <blockquote class="q2">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/testi4.webp" alt="Daniel R." loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Daniel R.</cite>
+                  <small>London &middot; Collector since 2019</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>The watch came with a note from the man who built it. Nobody has ever done that for me.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+            <blockquote class="q3">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/testi1.webp" alt="Sofia M." loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Sofia M.</cite>
+                  <small>Florence &middot; Second-generation client</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>My daughter will inherit the tote, not the receipt. That is the difference a bench makes.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+            <blockquote class="q4">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/elena.webp" alt="Elena V." loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Elena V.</cite>
+                  <small>Milan &middot; Private appointment</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>The private appointment felt unhurried. We chose the leather, the thread, and even the date it would be finished.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+          </div>
+          <div class="quotes-set" aria-hidden="true">
+            <blockquote class="q1">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/Anika.webp" alt="" loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Maeve K.</cite>
+                  <small>Mumbai &middot; Verified client</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>Nine airports, one tote. The leather has gone from pale tan to honey, and I would not undo a single mark.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+            <blockquote class="q2">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/Marco.webp" alt="" loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Daniel R.</cite>
+                  <small>London &middot; Collector since 2019</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>The watch came with a note from the man who built it. Nobody has ever done that for me.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+            <blockquote class="q3">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/giuli.webp" alt="" loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Sofia M.</cite>
+                  <small>Florence &middot; Second-generation client</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>My daughter will inherit the tote, not the receipt. That is the difference a bench makes.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+            <blockquote class="q4">
+              <div class="quote-head">
+                <img class="quote-avatar" src="assets/private shopping.webp" alt="" loading="lazy" decoding="async">
+                <div class="quote-meta">
+                  <cite>Elena V.</cite>
+                  <small>Milan &middot; Private appointment</small>
+                </div>
+                <span class="quote-stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p>The private appointment felt unhurried. We chose the leather, the thread, and even the date it would be finished.</p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+            </blockquote>
+          </div>
+        </div>
       </div>
       <div class="last">
         <a class="care" href="#"><img src="assets/calfskin.webp" alt="Tan calfskin bag">
@@ -349,18 +458,23 @@
     <div class="wrap">
       <div class="sf-top">
         <div class="sf-brand">
-          <a href="index.html" class="sf-logo" aria-label="Stackly home">
+          <a href="index.html?skipIntro=1" class="sf-logo" aria-label="Stackly home">
             <img src="assets/stackly-logo-recoloured.webp" alt="Stackly" width="156" height="42" loading="lazy">
           </a>
           <p>Stackly makes leather goods, watches and jewellery by hand in Florence, and looks after them for life.</p>
-          <a class="sf-mail" href="mailto:hello@thestackly.com">hello@thestackly.com <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <div class="sf-social" aria-label="Social media">
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="404.html" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i></a>
+          </div>
         </div>
         <nav class="sf-col" aria-label="Shop">
           <h4 class="sf-title" data-heading-glow>Shop</h4>
-          <a href="services.html">Services</a>
-          <a href="blog.html">Journal</a>
-          <a href="cart.html">Cart</a>
-          <a href="signup.html">Create account</a>
+          <a href="404.html">Services</a>
+          <a href="404.html">Journal</a>
+          <a href="404.html">Cart</a>
+          <a href="404.html">Create account</a>
         </nav>
         <nav class="sf-col" aria-label="Company">
           <h4 class="sf-title" data-heading-glow>Company</h4>
@@ -369,15 +483,20 @@
           <a href="services.html">Services</a>
           <a href="blog.html">Blog</a>
           <a href="contact.html">Contact</a>
-          <a href="signin.html">Sign in</a>
         </nav>
         <div class="sf-col sf-visit">
           <h4 class="sf-title" data-heading-glow>Visit</h4>
           <address>
-            <span>MMR Complex, Periyakollappatty</span>
-            <span>Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+            <a class="sf-address" href="404.html">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span class="sf-address-lines">
+                <span>MMR Complex, Periyakollappatty</span>
+                <span>Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+              </span>
+            </a>
           </address>
-          <a class="sf-phone" href="tel:7010792745"><i class="fa-solid fa-phone" aria-hidden="true"></i>7010792745</a>
+          <a class="sf-phone" href="404.html"><i class="fa-solid fa-phone" aria-hidden="true"></i>7010792745</a>
+          <a class="sf-email" href="404.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i>hello@thestackly.com</a>
         </div>
       </div>
     </div>
@@ -390,9 +509,6 @@
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
 
   <script>
     function validateSubscribe(e) {

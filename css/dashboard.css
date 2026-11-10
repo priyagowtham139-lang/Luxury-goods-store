@@ -64,6 +64,13 @@ body {
   box-shadow: none;
 }
 
+.dash-sidebar-scroll {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
 .sidebar-head {
   padding: 2px 12px 16px;
   margin-bottom: 12px;
@@ -189,6 +196,361 @@ body {
   margin-top: 1px;
   font-size: 11px;
   color: #6d7875;
+}
+
+/* Sidebar user profile card displaying the login email */
+.sidebar-user-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1.5px solid rgba(52, 49, 47, 0.1);
+  box-shadow: 0 2px 8px rgba(52, 49, 47, 0.04);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-user-card:hover {
+  background: #f7fcfa;
+  border-color: rgba(47, 143, 138, 0.4);
+  box-shadow: 0 4px 14px rgba(47, 143, 138, 0.1);
+  transform: translateY(-1px);
+}
+
+.sidebar-user-card:focus-visible {
+  outline: 2px solid #2f8f8a;
+  outline-offset: 2px;
+}
+
+.sidebar-user-card.is-active {
+  border-color: #2f8f8a;
+  background: #f7fcfa;
+  box-shadow: 0 0 0 3px rgba(47, 143, 138, 0.18);
+}
+
+.sidebar-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f2421 0%, #2f8f8a 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(47, 143, 138, 0.25);
+}
+
+.sidebar-user-avatar.admin-mode {
+  background: linear-gradient(135deg, #1f2421 0%, #b8572d 100%);
+  box-shadow: 0 2px 6px rgba(184, 87, 45, 0.25);
+}
+
+.sidebar-user-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.sidebar-user-name {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-email {
+  display: block;
+  font-size: 11px;
+  color: #6d7875;
+  line-height: 1.3;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: inherit;
+  transition: color 0.18s ease;
+}
+
+.sidebar-user-card:hover .sidebar-user-email {
+  color: #2f8f8a;
+}
+
+.sidebar-ctx-trigger {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #7b8582;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.18s ease, color 0.18s ease;
+  padding: 0;
+}
+
+.sidebar-ctx-trigger:hover,
+.sidebar-user-card:hover .sidebar-ctx-trigger {
+  background: rgba(47, 143, 138, 0.12);
+  color: #2f8f8a;
+}
+
+.sidebar-ctx-trigger:focus-visible {
+  outline: 2px solid #2f8f8a;
+  outline-offset: 1px;
+}
+
+/* Account Context Menu & Toast Feedback */
+.dash-context-menu {
+  position: fixed;
+  z-index: 100000;
+  width: 270px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid rgba(52, 49, 47, 0.12);
+  box-shadow: 0 16px 40px rgba(52, 49, 47, 0.16), 0 4px 12px rgba(47, 143, 138, 0.08);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateY(6px);
+  transform-origin: bottom left;
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.18s ease;
+  pointer-events: none;
+  font-family: var(--sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+.dash-context-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+.dash-ctx-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 10px 12px;
+}
+
+.dash-ctx-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f2421 0%, #2f8f8a 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(47, 143, 138, 0.25);
+}
+
+.dash-ctx-avatar.admin-mode {
+  background: linear-gradient(135deg, #1f2421 0%, #b8572d 100%);
+  box-shadow: 0 2px 6px rgba(184, 87, 45, 0.25);
+}
+
+.dash-ctx-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.dash-ctx-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-ctx-email {
+  font-size: 11.5px;
+  color: #6d7875;
+  line-height: 1.3;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.dash-ctx-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 10.5px;
+  font-weight: 700;
+  background: #eef8f4;
+  color: #2f8f8a;
+  letter-spacing: 0.02em;
+}
+
+.dash-ctx-role.admin {
+  background: #fbf5ec;
+  color: #b8572d;
+}
+
+.dash-ctx-divider {
+  height: 1px;
+  background: rgba(52, 49, 47, 0.08);
+  margin: 6px 4px;
+}
+
+.dash-ctx-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dash-ctx-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  color: #495350;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, color 0.15s ease;
+  line-height: 1.3;
+  font-family: inherit;
+}
+
+.dash-ctx-item i {
+  width: 16px;
+  font-size: 13px;
+  text-align: center;
+  color: #7b8582;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.dash-ctx-item:hover,
+.dash-ctx-item:focus-visible {
+  background: #eef8f4;
+  color: #1f2421;
+  outline: none;
+}
+
+.dash-ctx-item:hover i {
+  color: #2f8f8a;
+}
+
+.dash-ctx-item-text {
+  flex: 1 1 auto;
+}
+
+.dash-ctx-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(47, 143, 138, 0.12);
+  color: #2f8f8a;
+  margin-left: auto;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.dash-ctx-item.is-copied .dash-ctx-badge {
+  background: #2f8f8a;
+  color: #ffffff;
+}
+
+.dash-ctx-item.is-copied i {
+  color: #2f8f8a;
+}
+
+.dash-ctx-item.ctx-danger {
+  color: #b8572d;
+}
+
+.dash-ctx-item.ctx-danger i {
+  color: #b8572d;
+}
+
+.dash-ctx-item.ctx-danger:hover {
+  background: #fdf3ee;
+  color: #983f19;
+}
+
+.dash-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #1f2421;
+  color: #ffffff;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.25s ease;
+  pointer-events: none;
+  font-family: var(--sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+.dash-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dash-toast i {
+  color: #4ed8b9;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .dash-toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* Log out — sits at the very bottom of the rail */

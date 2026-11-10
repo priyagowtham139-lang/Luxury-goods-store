@@ -420,7 +420,7 @@
      2e · typewriter paragraphs
   --------------------------------------------------------- */
   function initTypewriters() {
-    var targets = $$('p').filter(function (p) {
+    var targets = $('p').filter(function (p) {
       if (p.classList.contains('sub') || p.classList.contains('err')) return false;
       if (p.closest('.qa')) return false;
       var kids = p.children;
@@ -661,15 +661,15 @@
     glowHeading($('.faq h2'));
     revealWords($('.faq .sub'));
     reveal($('.visit'), { y: 46, duration: 1 });
-    reveal($$('.qa details'), { y: 34, stagger: .08, duration: .8 });
+    reveal($('.qa details'), { y: 34, stagger: .08, duration: .8 });
 
     /* — card + footer headings — */
-    $$('h3:not(.sub), h5').forEach(function (el) {
+    $('h3:not(.sub), h5').forEach(function (el) {
       glowHeading(el, { stagger: .025, start: 'top 92%' });
     });
 
     /* — footer — */
-    reveal($$('.fgrid > div'), { y: 40, stagger: .09, duration: .9 });
+    reveal($('.fgrid > div'), { y: 40, stagger: .09, duration: .9 });
   }
 
   /* ---------------------------------------------------------

@@ -214,6 +214,23 @@
     var roleHintText = document.getElementById('roleHintText');
     var form = document.getElementById('loginForm');
 
+    function saveEnteredEmail() {
+      var val = (emailInput.value || '').trim();
+      if (!val) {
+        val = (currentRole === 'admin') ? 'admin@gmail.com' : 'marco.bellini@gmail.com';
+      }
+      try {
+        localStorage.setItem('stackly_user_email', val);
+        localStorage.setItem('stackly_current_role', currentRole);
+        if (currentRole === 'admin') {
+          localStorage.setItem('stackly_admin_email', val);
+        } else {
+          localStorage.setItem('stackly_client_email', val);
+        }
+      } catch (err) {}
+      return val;
+    }
+
     function setRole(role) {
       currentRole = role;
       if (role === 'admin') {
@@ -224,6 +241,13 @@
 
         emailLabel.textContent = 'Admin Email';
         emailInput.placeholder = 'admin@gmail.com';
+        var storedAdmin = '';
+        try {
+          storedAdmin = localStorage.getItem('stackly_admin_email') || '';
+        } catch (e) {}
+        if (storedAdmin) {
+          emailInput.value = storedAdmin;
+        }
         signinBtn.querySelector('span').textContent = 'Sign in to Admin Dashboard';
         signinTitle.textContent = 'Admin Portal';
         signinSub.textContent = 'Florence workshop management, artisan bench assignments, and edition ledger.';
@@ -236,6 +260,13 @@
 
         emailLabel.textContent = 'Email Address';
         emailInput.placeholder = 'name@gmail.com';
+        var storedUser = '';
+        try {
+          storedUser = localStorage.getItem('stackly_client_email') || localStorage.getItem('stackly_user_email') || '';
+        } catch (e) {}
+        if (storedUser) {
+          emailInput.value = storedUser;
+        }
         signinBtn.querySelector('span').textContent = 'Sign in to User Dashboard';
         signinTitle.textContent = 'Welcome back';
         signinSub.textContent = 'Sign in to access your registered numbered pieces, active bespoke commissions, and concierge services.';
@@ -246,6 +277,16 @@
       // role switch replaces the prefilled address.
       emailInput.dispatchEvent(new Event('input', { bubbles: true }));
     }
+
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('role') === 'admin') {
+        setRole('admin');
+      } else {
+        var prevUser = localStorage.getItem('stackly_client_email') || localStorage.getItem('stackly_user_email') || '';
+        if (prevUser) emailInput.value = prevUser;
+      }
+    } catch (e) {}
 
     userTab.addEventListener('click', function () {
       setRole('user');
@@ -261,6 +302,7 @@
     // and double-clicking or clicking the role tab with direct action opens the dashboard immediately!
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      saveEnteredEmail();
       if (currentRole === 'admin') {
         window.location.href = 'admin-dashboard.html';
       } else {
@@ -270,9 +312,11 @@
 
     // Optional quick direct navigation if user clicks the already active tab or clicks "Open Dashboard directly"
     userTab.addEventListener('dblclick', function () {
+      saveEnteredEmail();
       window.location.href = 'user-dashboard.html';
     });
     adminTab.addEventListener('dblclick', function () {
+      saveEnteredEmail();
       window.location.href = 'admin-dashboard.html';
     });
   </script>

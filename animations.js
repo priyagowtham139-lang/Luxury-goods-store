@@ -380,7 +380,9 @@
       duration: 14,
       ease: 'sine.inOut',
       yoyo: true,
-      repeat: -1
+      repeat: -1,
+          willChange: 'transform'
+
     });
   }
   if (!REDUCED && $('.season')) {

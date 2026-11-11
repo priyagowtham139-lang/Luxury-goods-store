@@ -251,6 +251,8 @@
       // Ignore a position recorded on a different page.
       if (savedUrl && savedUrl.split('#')[0] !== window.location.href.split('#')[0]) {
         sessionStorage.removeItem(RESTORE_REQUESTED_KEY);
+        // restore-scroll.js may have hidden the page; never leave it hidden.
+        revealRestoredPage();
         return false;
       }
       targetY = parseInt(sessionStorage.getItem(PREV_SCROLL_KEY) || '0', 10) || 0;
@@ -259,7 +261,12 @@
       sessionStorage.removeItem(RESTORE_REQUESTED_KEY);
     } catch (err) {}
 
-    if (targetY <= 0 && !sectionId) return false;
+    if (targetY <= 0 && !sectionId) {
+      // Nothing to restore: lift the curtain right away instead of waiting
+      // for the restore-scroll.js failsafe.
+      revealRestoredPage();
+      return false;
+    }
 
     try {
       if ('scrollRestoration' in history) history.scrollRestoration = 'manual';

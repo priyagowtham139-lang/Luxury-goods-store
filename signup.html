@@ -186,7 +186,8 @@
 
           <div class="field">
             <label for="signupEmail">Email Address</label>
-            <input type="email" id="signupEmail" class="signin-input" placeholder="yourname@gmail.com" required autocomplete="email">
+            <input type="email" id="signupEmail" class="signin-input" placeholder="yourname@gmail.com" required autocomplete="email" aria-describedby="signupEmailError">
+            <span class="field-error" id="signupEmailError" aria-live="polite"></span>
           </div>
 
           <!-- Password with eye toggle & dual-eye fix -->
@@ -199,6 +200,12 @@
               </button>
             </div>
             <span class="password-error" id="passwordError" aria-live="polite"></span>
+            <div class="password-strength" id="newPasswordStrength" data-input="newPassword">
+              <div class="password-strength-bars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span class="password-strength-text" aria-live="polite">Use 8+ characters with a mix of letters, numbers and symbols.</span>
+            </div>
           </div>
 
           <div class="field">
@@ -463,6 +470,7 @@
       });
     })();
   </script>
+  <script src="js/password-strength.js"></script>
   <script src="js/email-validation.js"></script>
   <script src="js/site-common.js"></script>
 </body>

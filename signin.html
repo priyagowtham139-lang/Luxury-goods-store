@@ -141,20 +141,33 @@
         <h1 id="signinTitle" data-split="chars">Welcome back</h1>
         <p class="signin-sub" id="signinSub" data-split="words">Sign in to access your registered numbered pieces, active bespoke commissions, and concierge services.</p>
 
-        <form class="signin-form" id="loginForm">
+        <form class="signin-form" id="loginForm" novalidate>
           <div class="field">
-            <label for="email" id="emailLabel">Email Address</label>
-            <input type="email" id="email" class="signin-input" placeholder="name@gmail.com" required autocomplete="username">
+            <div class="field-head">
+              <label for="email" id="emailLabel">Email Address</label>
+            </div>
+            <input type="email" id="email" class="signin-input" placeholder="name@gmail.com" required autocomplete="username" aria-describedby="emailError">
+            <span class="field-error" id="emailError" aria-live="polite"></span>
           </div>
           <div class="field">
-            <label for="password">Password</label>
+            <div class="field-head">
+              <label for="password">Password</label>
+              <a class="forgot-link" id="forgotPassword" href="404.html" data-skip-validation>Forgot password?</a>
+            </div>
             <div class="password-wrap">
-              <input type="password" id="password" class="signin-input" placeholder="••••••••" required autocomplete="current-password">
+              <input type="password" id="password" class="signin-input" placeholder="••••••••" required autocomplete="current-password" aria-describedby="passwordStrengthText passwordError">
               <!-- Eye toggle with cross-browser dual-eye suppression -->
               <button type="button" class="eye-toggle-btn" aria-label="Toggle password visibility" tabindex="-1">
                 <i class="fa-regular fa-eye"></i>
               </button>
             </div>
+            <div class="password-strength" id="passwordStrength" data-level="0">
+              <div class="password-strength-bars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <span class="password-strength-text" id="passwordStrengthText" aria-live="polite">Use 8+ characters with a mix of letters, numbers and symbols.</span>
+            </div>
+            <span class="field-error" id="passwordError" aria-live="polite"></span>
           </div>
           <button type="submit" class="signin-btn" id="signinBtn">
             <span>Sign in to User Dashboard</span>
@@ -300,8 +313,124 @@
     // "in login page if user click on user tab user dashboard should open and if user click admin on role admin dashboard should open."
     // Submitting the form navigates to the respective dashboard,
     // and double-clicking or clicking the role tab with direct action opens the dashboard immediately!
+
+    // ---------- Inline validation + password strength ----------
+    var passwordInput = document.getElementById('password');
+    var emailError = document.getElementById('emailError');
+    var passwordError = document.getElementById('passwordError');
+    var passwordStrength = document.getElementById('passwordStrength');
+    var passwordStrengthText = document.getElementById('passwordStrengthText');
+
+    var EMAIL_SHAPE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var GMAIL_EMAIL = /^[^\s@]+@gmail\.com$/i;
+    var STRENGTH_LABELS = ['Use 8+ characters with a mix of letters, numbers and symbols.', 'Weak password', 'Fair password', 'Good password', 'Strong password'];
+
+    function setFieldError(input, errorEl, message) {
+      if (!input || !errorEl) return;
+      if (message) {
+        errorEl.textContent = message;
+        errorEl.classList.add('is-visible');
+        input.classList.add('is-invalid');
+        input.setAttribute('aria-invalid', 'true');
+      } else {
+        errorEl.textContent = '';
+        errorEl.classList.remove('is-visible');
+        input.classList.remove('is-invalid');
+        input.removeAttribute('aria-invalid');
+      }
+    }
+
+    function validateEmailField() {
+      var value = (emailInput.value || '').trim();
+      if (!value) {
+        setFieldError(emailInput, emailError, 'Email address is required.');
+        return false;
+      }
+      if (!EMAIL_SHAPE.test(value)) {
+        setFieldError(emailInput, emailError, 'Enter a valid email address.');
+        return false;
+      }
+      if (!GMAIL_EMAIL.test(value)) {
+        setFieldError(emailInput, emailError, 'Please enter a valid Gmail address (e.g., name@gmail.com).');
+        return false;
+      }
+      setFieldError(emailInput, emailError, '');
+      return true;
+    }
+
+    function getPasswordScore(value) {
+      if (!value) return 0;
+      var score = 0;
+      if (value.length >= 8) score++;
+      if (/[a-z]/.test(value) && /[A-Z]/.test(value)) score++;
+      if (/[0-9]/.test(value)) score++;
+      if (/[^A-Za-z0-9]/.test(value)) score++;
+      return score;
+    }
+
+    function updatePasswordStrength() {
+      if (!passwordStrength || !passwordStrengthText) return;
+      var value = passwordInput.value || '';
+      var score = getPasswordScore(value);
+      passwordStrength.setAttribute('data-level', String(score));
+      if (!value) {
+        passwordStrengthText.textContent = STRENGTH_LABELS[0];
+      } else if (score <= 1) {
+        passwordStrengthText.textContent = STRENGTH_LABELS[1] + ' — add more characters, numbers and symbols.';
+      } else if (score === 2) {
+        passwordStrengthText.textContent = STRENGTH_LABELS[2] + ' — add an uppercase letter, number or symbol.';
+      } else if (score === 3) {
+        passwordStrengthText.textContent = STRENGTH_LABELS[3] + ' — add a symbol for maximum strength.';
+      } else {
+        passwordStrengthText.textContent = STRENGTH_LABELS[4];
+      }
+    }
+
+    function validatePasswordField() {
+      var value = passwordInput.value || '';
+      if (!value) {
+        setFieldError(passwordInput, passwordError, 'Password is required.');
+        return false;
+      }
+      if (value.length < 8) {
+        setFieldError(passwordInput, passwordError, 'Password must be at least 8 characters long.');
+        return false;
+      }
+      if (getPasswordScore(value) < 2) {
+        setFieldError(passwordInput, passwordError, 'Use at least 8 characters with a mix of letters, numbers and symbols.');
+        return false;
+      }
+      setFieldError(passwordInput, passwordError, '');
+      return true;
+    }
+
+    emailInput.addEventListener('input', function () {
+      // The shared Gmail validator owns live email feedback; just drop our
+      // "required" message as soon as the field has content again.
+      if (emailError && emailInput.value.trim() && emailError.textContent === 'Email address is required.') {
+        setFieldError(emailInput, emailError, '');
+      }
+    });
+
+    passwordInput.addEventListener('input', function () {
+      updatePasswordStrength();
+      if (passwordInput.classList.contains('is-invalid')) validatePasswordField();
+    });
+
+    passwordInput.addEventListener('blur', function () {
+      if (passwordInput.value) validatePasswordField();
+    });
+
+    updatePasswordStrength();
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var emailValid = validateEmailField();
+      var passwordValid = validatePasswordField();
+      if (!emailValid || !passwordValid) {
+        (!emailValid ? emailInput : passwordInput).focus();
+        return;
+      }
       saveEnteredEmail();
       if (currentRole === 'admin') {
         window.location.href = 'admin-dashboard.html';
@@ -319,6 +448,22 @@
       saveEnteredEmail();
       window.location.href = 'admin-dashboard.html';
     });
+
+    // "Forgot password?" opens the 404 page. Remember this sign-in URL
+    // (including any ?role= query) so the 404 "Go Back" button returns
+    // here instead of a stale previously stored page.
+    var forgotLink = document.getElementById('forgotPassword') || document.querySelector('.forgot-link');
+    if (forgotLink) {
+      forgotLink.addEventListener('click', function () {
+        try {
+          sessionStorage.setItem('stackly_prev_url', window.location.href.split('#')[0]);
+          sessionStorage.setItem('stackly_prev_scroll', '0');
+          sessionStorage.removeItem('stackly_restore_requested');
+          sessionStorage.removeItem('stackly_prev_section');
+          sessionStorage.removeItem('stackly_prev_section_offset');
+        } catch (err) {}
+      });
+    }
   </script>
   <script src="js/email-validation.js"></script>
   <script src="js/site-common.js"></script>

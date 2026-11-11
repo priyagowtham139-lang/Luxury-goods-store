@@ -204,8 +204,9 @@
 }
 
 .sf-address {
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
+  flex-direction: row !important;
   gap: 10px;
   margin: 0 !important;
   color: rgba(231, 239, 235, 0.7) !important;

@@ -183,7 +183,7 @@ body.contact-page .hero.bl {
   white-space: nowrap;
   letter-spacing: -0.015em;
   user-select: none;
-  animation: contactGhostDrift 8s ease-in-out infinite alternate, jglow 3s ease-in-out infinite alternate;
+  animation: contactGhostDrift 8s ease-in-out infinite alternate, all 3s ease-in-out infinite alternate;
 }
 
 @keyframes contactGhostDrift {

@@ -420,7 +420,7 @@
      2e · typewriter paragraphs
   --------------------------------------------------------- */
   function initTypewriters() {
-    var targets = $('p').filter(function (p) {
+    var targets = $$('p').filter(function (p) {
       if (p.classList.contains('sub') || p.classList.contains('err')) return false;
       if (p.closest('.qa')) return false;
       var kids = p.children;
@@ -664,7 +664,7 @@
     reveal($('.qa details'), { y: 34, stagger: .08, duration: .8 });
 
     /* — card + footer headings — */
-    $('h3:not(.sub), h5').forEach(function (el) {
+    $$('h3:not(.sub), h5').forEach(function (el) {
       glowHeading(el, { stagger: .025, start: 'top 92%' });
     });
 

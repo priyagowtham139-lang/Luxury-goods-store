@@ -323,6 +323,138 @@ p[data-split] a {
   color: rgba(52, 49, 47, 0.35);
 }
 
+.signin-input.is-invalid {
+  border-color: #b8572d;
+  background: #fff7f4;
+}
+
+.signin-input.is-invalid:focus {
+  border-color: #b8572d;
+  box-shadow: 0 0 0 4px rgba(184, 87, 45, 0.15);
+}
+
+/* Label row: label on the left, forgot-password link on the right */
+.signin-form .field-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.signin-form .field-head label {
+  margin-bottom: 0;
+}
+
+.forgot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  margin: -4px -11px -4px 0;
+  font-family: var(--sans, 'Figtree', sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: #2f8f8a;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  border-radius: 99px;
+  background: rgba(47, 143, 138, 0.09);
+  border: 1px solid transparent;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.forgot-link:hover {
+  color: #ffffff;
+  background: #2f8f8a;
+  border-color: #2f8f8a;
+  transform: translateY(-1px);
+}
+
+.forgot-link:focus-visible {
+  outline: 2px solid #2f8f8a;
+  outline-offset: 3px;
+}
+
+/* Inline field errors */
+.signin-form .field-error {
+  display: none;
+  margin: 7px 0 0 20px;
+  font-family: var(--sans, 'Figtree', sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #b8572d;
+}
+
+.signin-form .field-error.is-visible {
+  display: block;
+}
+
+/* Password strength alert */
+.password-strength {
+  margin: 9px 0 0 2px;
+}
+
+.password-strength-bars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.password-strength-bars span {
+  height: 4px;
+  flex: 1;
+  border-radius: 99px;
+  background: rgba(52, 49, 47, 0.12);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.password-strength-text {
+  display: block;
+  font-family: var(--sans, 'Figtree', sans-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgba(52, 49, 47, 0.5);
+  transition: color 0.25s ease;
+}
+
+.password-strength[data-level="1"] .password-strength-bars span:nth-child(1) {
+  background: #b8572d;
+  box-shadow: 0 0 8px rgba(184, 87, 45, 0.45);
+}
+
+.password-strength[data-level="2"] .password-strength-bars span:nth-child(-n+2) {
+  background: #c98a2b;
+}
+
+.password-strength[data-level="3"] .password-strength-bars span:nth-child(-n+3) {
+  background: #2f8f8a;
+}
+
+.password-strength[data-level="4"] .password-strength-bars span:nth-child(-n+4) {
+  background: #1f7a5c;
+  box-shadow: 0 0 8px rgba(47, 143, 138, 0.4);
+}
+
+.password-strength[data-level="1"] .password-strength-text {
+  color: #b8572d;
+}
+
+.password-strength[data-level="2"] .password-strength-text {
+  color: #a8731f;
+}
+
+.password-strength[data-level="3"] .password-strength-text {
+  color: #2f8f8a;
+}
+
+.password-strength[data-level="4"] .password-strength-text {
+  color: #1f7a5c;
+}
+
 .signin-btn {
   width: 100%;
   height: 48px;

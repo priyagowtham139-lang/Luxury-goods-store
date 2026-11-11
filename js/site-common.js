@@ -6,6 +6,14 @@
   var CLIENT_EMAIL_KEY = 'stackly_client_email';
   var ROLE_KEY = 'stackly_current_role';
 
+  // Keys shared with mobile-nav.js so the 404 "Go Back" button can restore
+  // the exact page, section and scroll offset the visitor left from.
+  var PREV_URL_KEY = 'stackly_prev_url';
+  var PREV_SCROLL_KEY = 'stackly_prev_scroll';
+  var PREV_SECTION_KEY = 'stackly_prev_section';
+  var PREV_SECTION_OFFSET_KEY = 'stackly_prev_section_offset';
+  var RESTORE_REQUESTED_KEY = 'stackly_restore_requested';
+
   function isCurrentAdmin() {
     try {
       var path = (window.location.pathname || '').toLowerCase();
@@ -162,6 +170,162 @@
     }
   }
 
+  function getPageScrollTop() {
+    return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  }
+
+  // Remember where the visitor was before leaving for 404.html. This mirrors
+  // the tracking inside mobile-nav.js, but site-common.js is the only script
+  // loaded on the admin/user dashboards.
+  function capturePreviousPosition() {
+    try {
+      var scrollY = getPageScrollTop();
+      sessionStorage.setItem(PREV_URL_KEY, window.location.href.split('#')[0]);
+      sessionStorage.setItem(PREV_SCROLL_KEY, String(scrollY));
+
+      var sections = document.querySelectorAll('section[id], header[id], main[id], div[id]');
+      var currentId = '';
+      var sectionTop = 0;
+      Array.prototype.forEach.call(sections, function (sec) {
+        if (!sec.id || sec.id === 'mobileStickyHeader' || sec.id === 'mobileNavBackdrop') return;
+        if (sec.closest('.dash-sidebar, .dash-context-menu, .mobile-drawer, .mobile-sticky-header, .dash-mobile-header')) return;
+
+        var rect = sec.getBoundingClientRect();
+        if (rect.top > 250 || rect.bottom < 100) return;
+        if (rect.width === 0 && rect.height === 0) return;
+
+        var style = window.getComputedStyle(sec);
+        if (style.position === 'fixed' || style.position === 'sticky') return;
+        if (style.display === 'none' || style.visibility === 'hidden') return;
+
+        currentId = sec.id;
+        sectionTop = rect.top + scrollY;
+      });
+
+      if (currentId) {
+        sessionStorage.setItem(PREV_SECTION_KEY, currentId);
+        // Store the offset inside the section so a small layout shift above it
+        // cannot move the restored viewport to a different part of the page.
+        sessionStorage.setItem(PREV_SECTION_OFFSET_KEY, String(scrollY - sectionTop));
+      } else {
+        sessionStorage.removeItem(PREV_SECTION_KEY);
+        sessionStorage.removeItem(PREV_SECTION_OFFSET_KEY);
+      }
+    } catch (err) {}
+  }
+
+  // Content pages use mobile-nav.js to restore the previous position, so only
+  // take over here when that script is not present (the dashboards).
+  function hasMobileNavRestore() {
+    var scripts = document.querySelectorAll('script[src]');
+    for (var i = 0; i < scripts.length; i++) {
+      var src = scripts[i].getAttribute('src') || '';
+      if (/(^|\/)mobile-nav\.js(?:[?#].*)?$/i.test(src)) return true;
+    }
+    return false;
+  }
+
+  function revealRestoredPage() {
+    try {
+      document.documentElement.classList.remove('stackly-restoring');
+      var style = document.getElementById('stacklyRestoreStyle');
+      if (style && style.parentNode) style.parentNode.removeChild(style);
+      document.documentElement.style.removeProperty('scroll-behavior');
+      document.documentElement.style.removeProperty('background-color');
+    } catch (err) {}
+  }
+
+  function restorePreviousPosition() {
+    var requested = false;
+    try {
+      requested = sessionStorage.getItem(RESTORE_REQUESTED_KEY) === 'true';
+    } catch (err) {}
+    if (!requested) return false;
+    if (hasMobileNavRestore()) return false;
+
+    var targetY = 0;
+    var sectionId = '';
+    var sectionOffset = 0;
+    try {
+      var savedUrl = sessionStorage.getItem(PREV_URL_KEY) || '';
+      // Ignore a position recorded on a different page.
+      if (savedUrl && savedUrl.split('#')[0] !== window.location.href.split('#')[0]) {
+        sessionStorage.removeItem(RESTORE_REQUESTED_KEY);
+        return false;
+      }
+      targetY = parseInt(sessionStorage.getItem(PREV_SCROLL_KEY) || '0', 10) || 0;
+      sectionId = sessionStorage.getItem(PREV_SECTION_KEY) || '';
+      sectionOffset = parseInt(sessionStorage.getItem(PREV_SECTION_OFFSET_KEY) || '0', 10) || 0;
+      sessionStorage.removeItem(RESTORE_REQUESTED_KEY);
+    } catch (err) {}
+
+    if (targetY <= 0 && !sectionId) return false;
+
+    try {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important');
+    } catch (err) {}
+
+    function applyRestore() {
+      var target = targetY;
+      if (sectionId) {
+        var sectionEl = document.getElementById(sectionId);
+        if (sectionEl) {
+          target = sectionEl.getBoundingClientRect().top + getPageScrollTop() + sectionOffset;
+        }
+      }
+      if (target > 0) {
+        try {
+          window.scrollTo({ top: target, left: 0, behavior: 'instant' });
+        } catch (err) {
+          window.scrollTo(0, target);
+        }
+      }
+    }
+
+    var finished = false;
+    function finishRestore() {
+      if (finished) return;
+      applyRestore();
+      if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(function () {
+          if (finished) return;
+          applyRestore();
+          finished = true;
+          revealRestoredPage();
+        });
+      } else {
+        finished = true;
+        revealRestoredPage();
+      }
+    }
+
+    applyRestore();
+    if (window.requestAnimationFrame) window.requestAnimationFrame(applyRestore);
+
+    var pending = 2;
+    function partDone() {
+      pending -= 1;
+      if (pending <= 0) finishRestore();
+    }
+    if (document.readyState === 'complete') {
+      partDone();
+    } else {
+      window.addEventListener('load', partDone, { once: true });
+    }
+    if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+      document.fonts.ready.then(partDone, partDone);
+    } else {
+      partDone();
+    }
+    window.setTimeout(finishRestore, 1200);
+    ['wheel', 'touchstart', 'keydown'].forEach(function (evt) {
+      window.addEventListener(evt, finishRestore, { passive: true, once: true });
+    });
+
+    return true;
+  }
+
   function redirectCta(e) {
     var target = e.target;
     var cta = target && target.closest
@@ -179,6 +343,10 @@
         cta.classList.contains('intro-skip') ||
         cta.classList.contains('to-top')) return;
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+    // Save the current dashboard section before the 404 page replaces this one,
+    // otherwise its "Go Back" button has no destination and falls back to home.
+    capturePreviousPosition();
 
     e.preventDefault();
     e.stopPropagation();
@@ -452,8 +620,16 @@
   document.addEventListener('click', redirectCta, true);
 
   function init() {
+    restorePreviousPosition();
     applyProfileName();
     initDashboardContextMenu();
+  }
+
+  // Keep an up-to-date destination for the 404 page on pages that do not load
+  // mobile-nav.js (the dashboards).
+  if (!hasMobileNavRestore()) {
+    window.addEventListener('beforeunload', capturePreviousPosition);
+    window.addEventListener('pagehide', capturePreviousPosition);
   }
 
   if (document.readyState === 'loading') {

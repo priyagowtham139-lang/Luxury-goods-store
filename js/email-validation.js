@@ -6,8 +6,11 @@
 (function () {
   'use strict';
 
+  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var GMAIL_PATTERN = /^[^\s@]+@gmail\.com$/i;
-  var ERROR_MESSAGE = 'Only Gmail addresses are allowed.';
+  var INVALID_MESSAGE = 'Enter a valid email address.';
+  var ERROR_MESSAGE = 'Please enter a valid Gmail address (e.g., name@gmail.com).';
+  var REQUIRED_MESSAGE = 'Email address is required.';
   var ERROR_CLASS = 'gmail-error';
   var initialized = false;
 
@@ -58,11 +61,11 @@
     return error;
   }
 
-  function showError(input, errorEl) {
+  function showError(input, errorEl, message) {
     input.classList.add('is-invalid');
     input.setAttribute('aria-invalid', 'true');
     if (!errorEl) return;
-    errorEl.textContent = ERROR_MESSAGE;
+    errorEl.textContent = message || ERROR_MESSAGE;
     errorEl.classList.add('is-visible');
     if (errorEl.classList.contains('err')) errorEl.classList.add('on');
   }
@@ -76,14 +79,22 @@
     errorEl.classList.remove('on');
   }
 
-  function validate(input, errorEl) {
+  function validate(input, errorEl, forceRequired) {
     var value = (input.value || '').trim();
     if (!value) {
+      if (forceRequired && input.hasAttribute('required')) {
+        showError(input, errorEl, REQUIRED_MESSAGE);
+        return false;
+      }
       clearError(input, errorEl);
       return true;
     }
+    if (!EMAIL_PATTERN.test(value)) {
+      showError(input, errorEl, INVALID_MESSAGE);
+      return false;
+    }
     if (!GMAIL_PATTERN.test(value)) {
-      showError(input, errorEl);
+      showError(input, errorEl, ERROR_MESSAGE);
       return false;
     }
     clearError(input, errorEl);
@@ -101,7 +112,9 @@
 
     input.addEventListener('input', check);
     input.addEventListener('change', check);
-    input.addEventListener('blur', check);
+    input.addEventListener('blur', function () {
+      validate(input, errorEl, true);
+    });
   }
 
   function emailInputsIn(form) {
@@ -113,7 +126,7 @@
     var invalid = null;
     inputs.forEach(function (input) {
       var errorEl = getErrorEl(input);
-      if (!validate(input, errorEl) && !invalid) invalid = input;
+      if (!validate(input, errorEl, true) && !invalid) invalid = input;
     });
     return invalid;
   }
@@ -146,6 +159,7 @@
       ? e.target.closest('button, input[type="submit"], input[type="image"], [role="button"], a[href]')
       : null;
     if (!trigger) return;
+    if (trigger.hasAttribute('data-skip-validation') || trigger.classList.contains('forgot-link')) return;
 
     var form = trigger.form || (trigger.closest ? trigger.closest('form') : null);
     if (!form) return;

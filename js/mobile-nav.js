@@ -43,12 +43,9 @@
             '<li><a href="contact.html" data-page="contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>' +
             '<li><a href="cart.html" data-page="cart.html"><i class="fa-solid fa-bag-shopping"></i><span>Cart</span></a></li>' +
           '</ul>' +
-          '<div class="drawer-section-label">Client & Atelier Portals</div>' +
+          '<div class="drawer-section-label">Client Portal</div>' +
           '<ul class="drawer-links drawer-portal-links">' +
             '<li><a href="signin.html" data-page="signin.html"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Sign In</span></a></li>' +
-            '<li><a href="signup.html" data-page="signup.html"><i class="fa-solid fa-user-plus"></i><span>Sign Up</span></a></li>' +
-            '<li><a href="user-dashboard.html" data-page="user-dashboard.html"><i class="fa-solid fa-user"></i><span>User Dashboard</span></a></li>' +
-            '<li><a href="admin-dashboard.html" data-page="admin-dashboard.html"><i class="fa-solid fa-shield-halved"></i><span>Admin Dashboard</span></a></li>' +
           '</ul>' +
         '</div>' +
         '<div class="drawer-footer">' +
